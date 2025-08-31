@@ -1,0 +1,29 @@
+object ClientFMXMainView: TClientFMXMainView
+  Left = 0
+  Top = 0
+  Caption = 'S'
+  ClientHeight = 500
+  ClientWidth = 350
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 3
+  object Button1: TButton
+    Align = MostTop
+    Margins.Left = 20.000000000000000000
+    Margins.Top = 20.000000000000000000
+    Margins.Right = 20.000000000000000000
+    Margins.Bottom = 20.000000000000000000
+    Position.X = 20.000000000000000000
+    Position.Y = 20.000000000000000000
+    Size.Width = 310.000000000000000000
+    Size.Height = 44.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Text = 'Produtos'
+    TextSettings.Trimming = None
+    TintColor = claDarkseagreen
+    OnClick = Button1Click
+  end
+end

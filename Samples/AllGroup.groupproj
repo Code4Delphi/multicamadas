@@ -12,6 +12,9 @@
         <Projects Include="Multicamadas\Server\Server.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="Multicamadas\ClientFMX\ClientFMX.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -47,14 +50,23 @@
     <Target Name="Server:Make">
         <MSBuild Projects="Multicamadas\Server\Server.dproj" Targets="Make"/>
     </Target>
+    <Target Name="ClientFMX">
+        <MSBuild Projects="Multicamadas\ClientFMX\ClientFMX.dproj"/>
+    </Target>
+    <Target Name="ClientFMX:Clean">
+        <MSBuild Projects="Multicamadas\ClientFMX\ClientFMX.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ClientFMX:Make">
+        <MSBuild Projects="Multicamadas\ClientFMX\ClientFMX.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="Monolito;ClientVCL;Server"/>
+        <CallTarget Targets="Monolito;ClientVCL;Server;ClientFMX"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="Monolito:Clean;ClientVCL:Clean;Server:Clean"/>
+        <CallTarget Targets="Monolito:Clean;ClientVCL:Clean;Server:Clean;ClientFMX:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="Monolito:Make;ClientVCL:Make;Server:Make"/>
+        <CallTarget Targets="Monolito:Make;ClientVCL:Make;Server:Make;ClientFMX:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
