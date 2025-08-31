@@ -234,12 +234,16 @@
             <Form>ClientFMXMainView</Form>
             <FormType>fmx</FormType>
         </DCCReference>
-        <DCCReference Include="Src\Produtos\Produtos.Cadastrar.View.pas">
-            <Form>ProdutosCadastrarView</Form>
+        <DCCReference Include="Src\Produtos\Produtos.Buscar.View.pas">
+            <Form>ProdutosBuscarView</Form>
             <FormType>fmx</FormType>
         </DCCReference>
         <DCCReference Include="..\..\Common\Produtos.DTO.pas"/>
         <DCCReference Include="..\..\Common\ProdutosService.pas"/>
+        <DCCReference Include="Src\Produtos\Produtos.Cadastrar.View.pas">
+            <Form>ProdutosCadastrarView</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
