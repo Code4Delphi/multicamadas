@@ -15,6 +15,9 @@
         <Projects Include="Multicamadas\ServerAuth\ServerAuth.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="Multicamadas\ClientWeb\ClientWeb.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -59,14 +62,23 @@
     <Target Name="ServerAuth:Make">
         <MSBuild Projects="Multicamadas\ServerAuth\ServerAuth.dproj" Targets="Make"/>
     </Target>
+    <Target Name="ClientWeb">
+        <MSBuild Projects="Multicamadas\ClientWeb\ClientWeb.dproj"/>
+    </Target>
+    <Target Name="ClientWeb:Clean">
+        <MSBuild Projects="Multicamadas\ClientWeb\ClientWeb.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ClientWeb:Make">
+        <MSBuild Projects="Multicamadas\ClientWeb\ClientWeb.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="Monolito;ClientVCL;Server;ServerAuth"/>
+        <CallTarget Targets="Monolito;ClientVCL;Server;ServerAuth;ClientWeb"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="Monolito:Clean;ClientVCL:Clean;Server:Clean;ServerAuth:Clean"/>
+        <CallTarget Targets="Monolito:Clean;ClientVCL:Clean;Server:Clean;ServerAuth:Clean;ClientWeb:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="Monolito:Make;ClientVCL:Make;Server:Make;ServerAuth:Make"/>
+        <CallTarget Targets="Monolito:Make;ClientVCL:Make;Server:Make;ServerAuth:Make;ClientWeb:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

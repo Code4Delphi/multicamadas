@@ -63,6 +63,7 @@ object LoginView: TLoginView
   end
   object XDataWebConnection1: TXDataWebConnection
     URL = 'http://localhost:2001/tms/auth/'
+    Connected = True
     Left = 72
     Top = 16
   end

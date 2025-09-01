@@ -48,7 +48,7 @@ object MainView: TMainView
   end
   object WebMessageDlg1: TWebMessageDlg
     Left = 584
-    Top = 31
+    Top = 16
     Width = 24
     Height = 24
     Buttons = []
@@ -195,6 +195,14 @@ object MainView: TMainView
     Font.Style = []
     ParentFont = False
     TabOrder = 2
+    ShowAcceleratorChar = False
+    Footer.Bar.Buttons = <>
+    Header.VisualGrouping.Layout.Font.Charset = DEFAULT_CHARSET
+    Header.VisualGrouping.Layout.Font.Color = clWindowText
+    Header.VisualGrouping.Layout.Font.Height = -12
+    Header.VisualGrouping.Layout.Font.Name = 'Segoe UI'
+    Header.VisualGrouping.Layout.Font.Style = []
+    Header.Bar.Buttons = <>
     Adapter = TMSFNCDataGridDatabaseAdapter1
     CellAppearance.FilterMatchLayout.Font.Charset = DEFAULT_CHARSET
     CellAppearance.FilterMatchLayout.Font.Color = clWindowText
@@ -254,392 +262,8 @@ object MainView: TMainView
     CellAppearance.SummaryLayout.Font.Height = -11
     CellAppearance.SummaryLayout.Font.Name = 'Segoe UI'
     CellAppearance.SummaryLayout.Font.Style = []
-    ColumnCount = 7
-    Columns = <
-      item
-        Appearance.FilterMatchLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.FilterMatchLayout.Font.Color = clWindowText
-        Appearance.FilterMatchLayout.Font.Height = -12
-        Appearance.FilterMatchLayout.Font.Name = 'Segoe UI'
-        Appearance.FilterMatchLayout.Font.Style = []
-        Appearance.FilterInverseMatchLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.FilterInverseMatchLayout.Font.Color = clWindowText
-        Appearance.FilterInverseMatchLayout.Font.Height = -12
-        Appearance.FilterInverseMatchLayout.Font.Name = 'Segoe UI'
-        Appearance.FilterInverseMatchLayout.Font.Style = []
-        Appearance.BandLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.BandLayout.Font.Color = clWindowText
-        Appearance.BandLayout.Font.Height = -11
-        Appearance.BandLayout.Font.Name = 'Segoe UI'
-        Appearance.BandLayout.Font.Style = []
-        Appearance.FixedLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.FixedLayout.Font.Color = clWindowText
-        Appearance.FixedLayout.Font.Height = -11
-        Appearance.FixedLayout.Font.Name = 'Segoe UI'
-        Appearance.FixedLayout.Font.Style = []
-        Appearance.FixedSelectedLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.FixedSelectedLayout.Font.Color = clWindowText
-        Appearance.FixedSelectedLayout.Font.Height = -11
-        Appearance.FixedSelectedLayout.Font.Name = 'Segoe UI'
-        Appearance.FixedSelectedLayout.Font.Style = []
-        Appearance.FocusedLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.FocusedLayout.Font.Color = clWindowText
-        Appearance.FocusedLayout.Font.Height = -11
-        Appearance.FocusedLayout.Font.Name = 'Segoe UI'
-        Appearance.FocusedLayout.Font.Style = []
-        Appearance.GroupLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.GroupLayout.Font.Color = clWindowText
-        Appearance.GroupLayout.Font.Height = -11
-        Appearance.GroupLayout.Font.Name = 'Segoe UI'
-        Appearance.GroupLayout.Font.Style = []
-        Appearance.NormalLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.NormalLayout.Font.Color = clWindowText
-        Appearance.NormalLayout.Font.Height = -11
-        Appearance.NormalLayout.Font.Name = 'Segoe UI'
-        Appearance.NormalLayout.Font.Style = []
-        Appearance.SelectedLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.SelectedLayout.Font.Color = clWindowText
-        Appearance.SelectedLayout.Font.Height = -11
-        Appearance.SelectedLayout.Font.Name = 'Segoe UI'
-        Appearance.SelectedLayout.Font.Style = []
-        Appearance.SummaryLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.SummaryLayout.Font.Color = clWindowText
-        Appearance.SummaryLayout.Font.Height = -11
-        Appearance.SummaryLayout.Font.Name = 'Segoe UI'
-        Appearance.SummaryLayout.Font.Style = []
-        Header = 'C'#243'digo'
-      end
-      item
-        Appearance.FilterMatchLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.FilterMatchLayout.Font.Color = clWindowText
-        Appearance.FilterMatchLayout.Font.Height = -12
-        Appearance.FilterMatchLayout.Font.Name = 'Segoe UI'
-        Appearance.FilterMatchLayout.Font.Style = []
-        Appearance.FilterInverseMatchLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.FilterInverseMatchLayout.Font.Color = clWindowText
-        Appearance.FilterInverseMatchLayout.Font.Height = -12
-        Appearance.FilterInverseMatchLayout.Font.Name = 'Segoe UI'
-        Appearance.FilterInverseMatchLayout.Font.Style = []
-        Appearance.BandLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.BandLayout.Font.Color = clWindowText
-        Appearance.BandLayout.Font.Height = -11
-        Appearance.BandLayout.Font.Name = 'Segoe UI'
-        Appearance.BandLayout.Font.Style = []
-        Appearance.FixedLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.FixedLayout.Font.Color = clWindowText
-        Appearance.FixedLayout.Font.Height = -11
-        Appearance.FixedLayout.Font.Name = 'Segoe UI'
-        Appearance.FixedLayout.Font.Style = []
-        Appearance.FixedSelectedLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.FixedSelectedLayout.Font.Color = clWindowText
-        Appearance.FixedSelectedLayout.Font.Height = -11
-        Appearance.FixedSelectedLayout.Font.Name = 'Segoe UI'
-        Appearance.FixedSelectedLayout.Font.Style = []
-        Appearance.FocusedLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.FocusedLayout.Font.Color = clWindowText
-        Appearance.FocusedLayout.Font.Height = -11
-        Appearance.FocusedLayout.Font.Name = 'Segoe UI'
-        Appearance.FocusedLayout.Font.Style = []
-        Appearance.GroupLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.GroupLayout.Font.Color = clWindowText
-        Appearance.GroupLayout.Font.Height = -11
-        Appearance.GroupLayout.Font.Name = 'Segoe UI'
-        Appearance.GroupLayout.Font.Style = []
-        Appearance.NormalLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.NormalLayout.Font.Color = clWindowText
-        Appearance.NormalLayout.Font.Height = -11
-        Appearance.NormalLayout.Font.Name = 'Segoe UI'
-        Appearance.NormalLayout.Font.Style = []
-        Appearance.SelectedLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.SelectedLayout.Font.Color = clWindowText
-        Appearance.SelectedLayout.Font.Height = -11
-        Appearance.SelectedLayout.Font.Name = 'Segoe UI'
-        Appearance.SelectedLayout.Font.Style = []
-        Appearance.SummaryLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.SummaryLayout.Font.Color = clWindowText
-        Appearance.SummaryLayout.Font.Height = -11
-        Appearance.SummaryLayout.Font.Name = 'Segoe UI'
-        Appearance.SummaryLayout.Font.Style = []
-        Header = 'C'#243'd. Cidade'
-        Width = 90.000000000000000000
-      end
-      item
-        Appearance.FilterMatchLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.FilterMatchLayout.Font.Color = clWindowText
-        Appearance.FilterMatchLayout.Font.Height = -12
-        Appearance.FilterMatchLayout.Font.Name = 'Segoe UI'
-        Appearance.FilterMatchLayout.Font.Style = []
-        Appearance.FilterInverseMatchLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.FilterInverseMatchLayout.Font.Color = clWindowText
-        Appearance.FilterInverseMatchLayout.Font.Height = -12
-        Appearance.FilterInverseMatchLayout.Font.Name = 'Segoe UI'
-        Appearance.FilterInverseMatchLayout.Font.Style = []
-        Appearance.BandLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.BandLayout.Font.Color = clWindowText
-        Appearance.BandLayout.Font.Height = -11
-        Appearance.BandLayout.Font.Name = 'Segoe UI'
-        Appearance.BandLayout.Font.Style = []
-        Appearance.FixedLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.FixedLayout.Font.Color = clWindowText
-        Appearance.FixedLayout.Font.Height = -11
-        Appearance.FixedLayout.Font.Name = 'Segoe UI'
-        Appearance.FixedLayout.Font.Style = []
-        Appearance.FixedSelectedLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.FixedSelectedLayout.Font.Color = clWindowText
-        Appearance.FixedSelectedLayout.Font.Height = -11
-        Appearance.FixedSelectedLayout.Font.Name = 'Segoe UI'
-        Appearance.FixedSelectedLayout.Font.Style = []
-        Appearance.FocusedLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.FocusedLayout.Font.Color = clWindowText
-        Appearance.FocusedLayout.Font.Height = -11
-        Appearance.FocusedLayout.Font.Name = 'Segoe UI'
-        Appearance.FocusedLayout.Font.Style = []
-        Appearance.GroupLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.GroupLayout.Font.Color = clWindowText
-        Appearance.GroupLayout.Font.Height = -11
-        Appearance.GroupLayout.Font.Name = 'Segoe UI'
-        Appearance.GroupLayout.Font.Style = []
-        Appearance.NormalLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.NormalLayout.Font.Color = clWindowText
-        Appearance.NormalLayout.Font.Height = -11
-        Appearance.NormalLayout.Font.Name = 'Segoe UI'
-        Appearance.NormalLayout.Font.Style = []
-        Appearance.SelectedLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.SelectedLayout.Font.Color = clWindowText
-        Appearance.SelectedLayout.Font.Height = -11
-        Appearance.SelectedLayout.Font.Name = 'Segoe UI'
-        Appearance.SelectedLayout.Font.Style = []
-        Appearance.SummaryLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.SummaryLayout.Font.Color = clWindowText
-        Appearance.SummaryLayout.Font.Height = -11
-        Appearance.SummaryLayout.Font.Name = 'Segoe UI'
-        Appearance.SummaryLayout.Font.Style = []
-        Header = 'Nome'
-        Width = 430.000000000000000000
-      end
-      item
-        Appearance.FilterMatchLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.FilterMatchLayout.Font.Color = clWindowText
-        Appearance.FilterMatchLayout.Font.Height = -12
-        Appearance.FilterMatchLayout.Font.Name = 'Segoe UI'
-        Appearance.FilterMatchLayout.Font.Style = []
-        Appearance.FilterInverseMatchLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.FilterInverseMatchLayout.Font.Color = clWindowText
-        Appearance.FilterInverseMatchLayout.Font.Height = -12
-        Appearance.FilterInverseMatchLayout.Font.Name = 'Segoe UI'
-        Appearance.FilterInverseMatchLayout.Font.Style = []
-        Appearance.BandLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.BandLayout.Font.Color = clWindowText
-        Appearance.BandLayout.Font.Height = -11
-        Appearance.BandLayout.Font.Name = 'Segoe UI'
-        Appearance.BandLayout.Font.Style = []
-        Appearance.FixedLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.FixedLayout.Font.Color = clWindowText
-        Appearance.FixedLayout.Font.Height = -11
-        Appearance.FixedLayout.Font.Name = 'Segoe UI'
-        Appearance.FixedLayout.Font.Style = []
-        Appearance.FixedSelectedLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.FixedSelectedLayout.Font.Color = clWindowText
-        Appearance.FixedSelectedLayout.Font.Height = -11
-        Appearance.FixedSelectedLayout.Font.Name = 'Segoe UI'
-        Appearance.FixedSelectedLayout.Font.Style = []
-        Appearance.FocusedLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.FocusedLayout.Font.Color = clWindowText
-        Appearance.FocusedLayout.Font.Height = -11
-        Appearance.FocusedLayout.Font.Name = 'Segoe UI'
-        Appearance.FocusedLayout.Font.Style = []
-        Appearance.GroupLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.GroupLayout.Font.Color = clWindowText
-        Appearance.GroupLayout.Font.Height = -11
-        Appearance.GroupLayout.Font.Name = 'Segoe UI'
-        Appearance.GroupLayout.Font.Style = []
-        Appearance.NormalLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.NormalLayout.Font.Color = clWindowText
-        Appearance.NormalLayout.Font.Height = -11
-        Appearance.NormalLayout.Font.Name = 'Segoe UI'
-        Appearance.NormalLayout.Font.Style = []
-        Appearance.SelectedLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.SelectedLayout.Font.Color = clWindowText
-        Appearance.SelectedLayout.Font.Height = -11
-        Appearance.SelectedLayout.Font.Name = 'Segoe UI'
-        Appearance.SelectedLayout.Font.Style = []
-        Appearance.SummaryLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.SummaryLayout.Font.Color = clWindowText
-        Appearance.SummaryLayout.Font.Height = -11
-        Appearance.SummaryLayout.Font.Name = 'Segoe UI'
-        Appearance.SummaryLayout.Font.Style = []
-        Header = 'Profiss'#227'o'
-        Width = 300.000000000000000000
-      end
-      item
-        Appearance.FilterMatchLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.FilterMatchLayout.Font.Color = clWindowText
-        Appearance.FilterMatchLayout.Font.Height = -12
-        Appearance.FilterMatchLayout.Font.Name = 'Segoe UI'
-        Appearance.FilterMatchLayout.Font.Style = []
-        Appearance.FilterInverseMatchLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.FilterInverseMatchLayout.Font.Color = clWindowText
-        Appearance.FilterInverseMatchLayout.Font.Height = -12
-        Appearance.FilterInverseMatchLayout.Font.Name = 'Segoe UI'
-        Appearance.FilterInverseMatchLayout.Font.Style = []
-        Appearance.BandLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.BandLayout.Font.Color = clWindowText
-        Appearance.BandLayout.Font.Height = -11
-        Appearance.BandLayout.Font.Name = 'Segoe UI'
-        Appearance.BandLayout.Font.Style = []
-        Appearance.FixedLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.FixedLayout.Font.Color = clWindowText
-        Appearance.FixedLayout.Font.Height = -11
-        Appearance.FixedLayout.Font.Name = 'Segoe UI'
-        Appearance.FixedLayout.Font.Style = []
-        Appearance.FixedSelectedLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.FixedSelectedLayout.Font.Color = clWindowText
-        Appearance.FixedSelectedLayout.Font.Height = -11
-        Appearance.FixedSelectedLayout.Font.Name = 'Segoe UI'
-        Appearance.FixedSelectedLayout.Font.Style = []
-        Appearance.FocusedLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.FocusedLayout.Font.Color = clWindowText
-        Appearance.FocusedLayout.Font.Height = -11
-        Appearance.FocusedLayout.Font.Name = 'Segoe UI'
-        Appearance.FocusedLayout.Font.Style = []
-        Appearance.GroupLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.GroupLayout.Font.Color = clWindowText
-        Appearance.GroupLayout.Font.Height = -11
-        Appearance.GroupLayout.Font.Name = 'Segoe UI'
-        Appearance.GroupLayout.Font.Style = []
-        Appearance.NormalLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.NormalLayout.Font.Color = clWindowText
-        Appearance.NormalLayout.Font.Height = -11
-        Appearance.NormalLayout.Font.Name = 'Segoe UI'
-        Appearance.NormalLayout.Font.Style = []
-        Appearance.SelectedLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.SelectedLayout.Font.Color = clWindowText
-        Appearance.SelectedLayout.Font.Height = -11
-        Appearance.SelectedLayout.Font.Name = 'Segoe UI'
-        Appearance.SelectedLayout.Font.Style = []
-        Appearance.SummaryLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.SummaryLayout.Font.Color = clWindowText
-        Appearance.SummaryLayout.Font.Height = -11
-        Appearance.SummaryLayout.Font.Name = 'Segoe UI'
-        Appearance.SummaryLayout.Font.Style = []
-        Formatting.Type = gdftFloat
-        Header = 'Limite'
-        Settings = [gcsFormatting]
-      end
-      item
-        Appearance.FilterMatchLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.FilterMatchLayout.Font.Color = clWindowText
-        Appearance.FilterMatchLayout.Font.Height = -12
-        Appearance.FilterMatchLayout.Font.Name = 'Segoe UI'
-        Appearance.FilterMatchLayout.Font.Style = []
-        Appearance.FilterInverseMatchLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.FilterInverseMatchLayout.Font.Color = clWindowText
-        Appearance.FilterInverseMatchLayout.Font.Height = -12
-        Appearance.FilterInverseMatchLayout.Font.Name = 'Segoe UI'
-        Appearance.FilterInverseMatchLayout.Font.Style = []
-        Appearance.BandLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.BandLayout.Font.Color = clWindowText
-        Appearance.BandLayout.Font.Height = -11
-        Appearance.BandLayout.Font.Name = 'Segoe UI'
-        Appearance.BandLayout.Font.Style = []
-        Appearance.FixedLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.FixedLayout.Font.Color = clWindowText
-        Appearance.FixedLayout.Font.Height = -11
-        Appearance.FixedLayout.Font.Name = 'Segoe UI'
-        Appearance.FixedLayout.Font.Style = []
-        Appearance.FixedSelectedLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.FixedSelectedLayout.Font.Color = clWindowText
-        Appearance.FixedSelectedLayout.Font.Height = -11
-        Appearance.FixedSelectedLayout.Font.Name = 'Segoe UI'
-        Appearance.FixedSelectedLayout.Font.Style = []
-        Appearance.FocusedLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.FocusedLayout.Font.Color = clWindowText
-        Appearance.FocusedLayout.Font.Height = -11
-        Appearance.FocusedLayout.Font.Name = 'Segoe UI'
-        Appearance.FocusedLayout.Font.Style = []
-        Appearance.GroupLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.GroupLayout.Font.Color = clWindowText
-        Appearance.GroupLayout.Font.Height = -11
-        Appearance.GroupLayout.Font.Name = 'Segoe UI'
-        Appearance.GroupLayout.Font.Style = []
-        Appearance.NormalLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.NormalLayout.Font.Color = clWindowText
-        Appearance.NormalLayout.Font.Height = -11
-        Appearance.NormalLayout.Font.Name = 'Segoe UI'
-        Appearance.NormalLayout.Font.Style = []
-        Appearance.SelectedLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.SelectedLayout.Font.Color = clWindowText
-        Appearance.SelectedLayout.Font.Height = -11
-        Appearance.SelectedLayout.Font.Name = 'Segoe UI'
-        Appearance.SelectedLayout.Font.Style = []
-        Appearance.SummaryLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.SummaryLayout.Font.Color = clWindowText
-        Appearance.SummaryLayout.Font.Height = -11
-        Appearance.SummaryLayout.Font.Name = 'Segoe UI'
-        Appearance.SummaryLayout.Font.Style = []
-        Formatting.Type = gdftNumber
-        Header = 'Porcentagem'
-        Settings = [gcsType, gcsFormatting]
-        TypeRange = gcirNormal
-        Width = 110.000000000000000000
-      end
-      item
-        Type = gcitCheckBox
-        Appearance.FilterMatchLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.FilterMatchLayout.Font.Color = clWindowText
-        Appearance.FilterMatchLayout.Font.Height = -12
-        Appearance.FilterMatchLayout.Font.Name = 'Segoe UI'
-        Appearance.FilterMatchLayout.Font.Style = []
-        Appearance.FilterInverseMatchLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.FilterInverseMatchLayout.Font.Color = clWindowText
-        Appearance.FilterInverseMatchLayout.Font.Height = -12
-        Appearance.FilterInverseMatchLayout.Font.Name = 'Segoe UI'
-        Appearance.FilterInverseMatchLayout.Font.Style = []
-        Appearance.BandLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.BandLayout.Font.Color = clWindowText
-        Appearance.BandLayout.Font.Height = -11
-        Appearance.BandLayout.Font.Name = 'Segoe UI'
-        Appearance.BandLayout.Font.Style = []
-        Appearance.FixedLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.FixedLayout.Font.Color = clWindowText
-        Appearance.FixedLayout.Font.Height = -11
-        Appearance.FixedLayout.Font.Name = 'Segoe UI'
-        Appearance.FixedLayout.Font.Style = []
-        Appearance.FixedSelectedLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.FixedSelectedLayout.Font.Color = clWindowText
-        Appearance.FixedSelectedLayout.Font.Height = -11
-        Appearance.FixedSelectedLayout.Font.Name = 'Segoe UI'
-        Appearance.FixedSelectedLayout.Font.Style = []
-        Appearance.FocusedLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.FocusedLayout.Font.Color = clWindowText
-        Appearance.FocusedLayout.Font.Height = -11
-        Appearance.FocusedLayout.Font.Name = 'Segoe UI'
-        Appearance.FocusedLayout.Font.Style = []
-        Appearance.GroupLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.GroupLayout.Font.Color = clWindowText
-        Appearance.GroupLayout.Font.Height = -11
-        Appearance.GroupLayout.Font.Name = 'Segoe UI'
-        Appearance.GroupLayout.Font.Style = []
-        Appearance.NormalLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.NormalLayout.Font.Color = clWindowText
-        Appearance.NormalLayout.Font.Height = -11
-        Appearance.NormalLayout.Font.Name = 'Segoe UI'
-        Appearance.NormalLayout.Font.Style = []
-        Appearance.SelectedLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.SelectedLayout.Font.Color = clWindowText
-        Appearance.SelectedLayout.Font.Height = -11
-        Appearance.SelectedLayout.Font.Name = 'Segoe UI'
-        Appearance.SelectedLayout.Font.Style = []
-        Appearance.SummaryLayout.Font.Charset = DEFAULT_CHARSET
-        Appearance.SummaryLayout.Font.Color = clWindowText
-        Appearance.SummaryLayout.Font.Height = -11
-        Appearance.SummaryLayout.Font.Name = 'Segoe UI'
-        Appearance.SummaryLayout.Font.Style = []
-        Formatting.Type = gdftBoolean
-        Header = 'Ativo'
-        Settings = [gcsType, gcsFormatting]
-        Width = 95.000000000000000000
-      end>
+    ColumnCount = 0
+    Columns = <>
     Designer = False
     FilterActions = <>
     FilterAppearance.Font.Charset = DEFAULT_CHARSET
@@ -897,7 +521,150 @@ object MainView: TMainView
       2E34342031392E35362031352E35362032302E34342032322E352032372E3338
       2032392E34342032302E34342032382E35362031392E35362032332032352E31
       32222F3E3C2F673E3C2F7376673E}
-    Options.Filtering.Advanced = False
+    Icons.CloseIcon.Data = {
+      1054544D53464E435356474269746D6170180400003C21444F43545950452073
+      7667205055424C494320222D2F2F5733432F2F4454442053564720312E312F2F
+      454E222022687474703A2F2F7777772E77332E6F72672F47726170686963732F
+      5356472F312E312F4454442F73766731312E647464223E0A0D3C212D2D205570
+      6C6F6164656420746F3A20535647205265706F2C207777772E7376677265706F
+      2E636F6D2C205472616E73666F726D65642062793A20535647205265706F204D
+      6978657220546F6F6C73202D2D3E0A3C7376672077696474683D223634707822
+      206865696768743D2236347078222076696577426F783D223020302032342032
+      34222066696C6C3D226E6F6E652220786D6C6E733D22687474703A2F2F777777
+      2E77332E6F72672F323030302F73766722207374726F6B653D22233030303030
+      30223E0A0D3C672069643D225356475265706F5F626743617272696572222073
+      74726F6B652D77696474683D2230222F3E0A0D3C672069643D22535647526570
+      6F5F7472616365724361727269657222207374726F6B652D6C696E656361703D
+      22726F756E6422207374726F6B652D6C696E656A6F696E3D22726F756E64222F
+      3E0A0D3C672069643D225356475265706F5F69636F6E43617272696572223E20
+      3C706174682066696C6C2D72756C653D226576656E6F64642220636C69702D72
+      756C653D226576656E6F64642220643D224D352E323932383920352E32393238
+      3943352E363833343220342E393032333720362E333136353820342E39303233
+      3720362E373037313120352E32393238394C31322031302E353835384C31372E
+      3239323920352E32393238394331372E3638333420342E39303233372031382E
+      3331363620342E39303233372031382E3730373120352E32393238394331392E
+      3039373620352E36383334322031392E3039373620362E33313635382031382E
+      3730373120362E37303731314C31332E343134322031324C31382E3730373120
+      31372E323932394331392E303937362031372E363833342031392E3039373620
+      31382E333136362031382E373037312031382E373037314331382E3331363620
+      31392E303937362031372E363833342031392E303937362031372E3239323920
+      31382E373037314C31322031332E343134324C362E37303731312031382E3730
+      373143362E33313635382031392E3039373620352E36383334322031392E3039
+      373620352E32393238392031382E3730373143342E39303233372031382E3331
+      363620342E39303233372031372E3638333420352E32393238392031372E3239
+      32394C31302E353835382031324C352E323932383920362E373037313143342E
+      393032333720362E333136353820342E393032333720352E363833343220352E
+      323932383920352E32393238395A222066696C6C3D2223304631373239222F3E
+      203C2F673E0A0D3C2F7376673E}
+    Icons.FirstPageIcon.Data = {
+      1054544D53464E435356474269746D6170800300003C3F786D6C207665727369
+      6F6E3D22312E3022203F3E3C21444F43545950452073766720205055424C4943
+      20272D2F2F5733432F2F4454442053564720312E312F2F454E27202027687474
+      703A2F2F7777772E77332E6F72672F47726170686963732F5356472F312E312F
+      4454442F73766731312E647464273E3C73766720656E61626C652D6261636B67
+      726F756E643D226E65772030203020333220333222206865696768743D223332
+      7078222069643D22D0A1D0BBD0BED0B95F31222076657273696F6E3D22312E31
+      222076696577426F783D22302030203332203332222077696474683D22333270
+      782220786D6C3A73706163653D2270726573657276652220786D6C6E733D2268
+      7474703A2F2F7777772E77332E6F72672F323030302F7376672220786D6C6E73
+      3A786C696E6B3D22687474703A2F2F7777772E77332E6F72672F313939392F78
+      6C696E6B223E3C672069643D22446F75626C655F43686576726F6E5F4C656674
+      223E3C7061746820643D224D31302E3435362C31366C362E3139362D362E3238
+      3563302E3339312D302E3339342C302E3339312D312E3033342C302D312E3432
+      38632D302E3339312D302E3339342D312E3032342D302E3339342D312E343134
+      2C306C2D362E3839392C362E393939202020632D302E3337352C302E3337392D
+      302E3337372C312E3034382C302C312E3432396C362E392C362E39393963302E
+      33392C302E3339342C312E3032342C302E3339342C312E3431342C3063302E33
+      39312D302E3339342C302E3339312D312E3033342C302D312E3432384C31302E
+      3435362C31367A222066696C6C3D2223313231333133222F3E3C706174682064
+      3D224D31372E3435362C31366C362E3139362D362E32383563302E3339312D30
+      2E3339342C302E3339312D312E3033342C302D312E343238632D302E3339312D
+      302E3339342D312E3032342D302E3339342D312E3431342C306C2D362E383939
+      2C362E393939202020632D302E3337352C302E3337392D302E3337372C312E30
+      34382C302C312E3432396C362E3839392C362E39393963302E3339312C302E33
+      39342C312E3032342C302E3339342C312E3431342C3063302E3339312D302E33
+      39342C302E3339312D312E3033342C302D312E3432384C31372E3435362C3136
+      7A222066696C6C3D2223313231333133222F3E3C2F673E3C672F3E3C672F3E3C
+      672F3E3C672F3E3C672F3E3C672F3E3C2F7376673E}
+    Icons.LastPageIcon.Data = {
+      1054544D53464E435356474269746D6170A60300003C3F786D6C207665727369
+      6F6E3D22312E3022203F3E3C21444F43545950452073766720205055424C4943
+      20272D2F2F5733432F2F4454442053564720312E312F2F454E27202027687474
+      703A2F2F7777772E77332E6F72672F47726170686963732F5356472F312E312F
+      4454442F73766731312E647464273E3C73766720656E61626C652D6261636B67
+      726F756E643D226E65772030203020333220333222206865696768743D223332
+      7078222069643D22D0A1D0BBD0BED0B95F31222076657273696F6E3D22312E31
+      222076696577426F783D22302030203332203332222077696474683D22333270
+      782220786D6C3A73706163653D2270726573657276652220786D6C6E733D2268
+      7474703A2F2F7777772E77332E6F72672F323030302F7376672220786D6C6E73
+      3A786C696E6B3D22687474703A2F2F7777772E77332E6F72672F313939392F78
+      6C696E6B223E3C672069643D22446F75626C655F43686576726F6E5F52696768
+      74223E3C7061746820643D224D32332E3636322C31352E3238366C2D362E392D
+      362E393939632D302E33392D302E3339342D312E3032342D302E3339342D312E
+      3431342C30632D302E3339312C302E3339342D302E3339312C312E3033342C30
+      2C312E3432384C32312E3534342C31362020206C2D362E3139362C362E323835
+      632D302E3339312C302E3339342D302E3339312C312E3033342C302C312E3432
+      3863302E3339312C302E3339342C312E3032342C302E3339342C312E3431342C
+      306C362E3839392D362E3939392020204332342E3033382C31362E3333352C32
+      342E3033392C31352E3636362C32332E3636322C31352E3238367A222066696C
+      6C3D2223313231333133222F3E3C7061746820643D224D31362E3636322C3135
+      2E3238364C392E3736332C382E323837632D302E3339312D302E3339342D312E
+      3032342D302E3339342D312E3431342C30632D302E3339312C302E3339342D30
+      2E3339312C312E3033342C302C312E3432384C31342E3534342C31362020206C
+      2D362E3139362C362E323835632D302E3339312C302E3339342D302E3339312C
+      312E3033342C302C312E34323863302E3339312C302E3339342C312E3032342C
+      302E3339342C312E3431342C306C362E3839392D362E3939392020204331372E
+      3033382C31362E3333352C31372E3033392C31352E3636362C31362E3636322C
+      31352E3238367A222066696C6C3D2223313231333133222F3E3C2F673E3C672F
+      3E3C672F3E3C672F3E3C672F3E3C672F3E3C672F3E3C2F7376673E}
+    Icons.NextPageIcon.Data = {
+      1054544D53464E435356474269746D6170B50200003C3F786D6C207665727369
+      6F6E3D22312E3022203F3E3C21444F43545950452073766720205055424C4943
+      20272D2F2F5733432F2F4454442053564720312E312F2F454E27202027687474
+      703A2F2F7777772E77332E6F72672F47726170686963732F5356472F312E312F
+      4454442F73766731312E647464273E3C73766720656E61626C652D6261636B67
+      726F756E643D226E65772030203020333220333222206865696768743D223332
+      7078222069643D22D0A1D0BBD0BED0B95F31222076657273696F6E3D22312E31
+      222076696577426F783D22302030203332203332222077696474683D22333270
+      782220786D6C3A73706163653D2270726573657276652220786D6C6E733D2268
+      7474703A2F2F7777772E77332E6F72672F323030302F7376672220786D6C6E73
+      3A786C696E6B3D22687474703A2F2F7777772E77332E6F72672F313939392F78
+      6C696E6B223E3C7061746820636C69702D72756C653D226576656E6F64642220
+      643D224D32312E3639382C31352E3238366C2D392E3030322D382E3939392020
+      632D302E3339352D302E3339342D312E3033352D302E3339342D312E3433312C
+      30632D302E3339352C302E3339342D302E3339352C312E3033342C302C312E34
+      32384C31392E3535332C31366C2D382E3238372C382E323835632D302E333935
+      2C302E3339342D302E3339352C312E3033342C302C312E343239202063302E33
+      39352C302E3339342C312E3033362C302E3339342C312E3433312C306C392E30
+      30322D382E3939394332322E3038382C31362E3332352C32322E3038382C3135
+      2E3637352C32312E3639382C31352E3238367A222066696C6C3D222331323133
+      3133222066696C6C2D72756C653D226576656E6F6464222069643D2243686576
+      726F6E5F5269676874222F3E3C672F3E3C672F3E3C672F3E3C672F3E3C672F3E
+      3C672F3E3C2F7376673E}
+    Icons.PreviousPageIcon.Data = {
+      1054544D53464E435356474269746D6170B20200003C3F786D6C207665727369
+      6F6E3D22312E3022203F3E3C21444F43545950452073766720205055424C4943
+      20272D2F2F5733432F2F4454442053564720312E312F2F454E27202027687474
+      703A2F2F7777772E77332E6F72672F47726170686963732F5356472F312E312F
+      4454442F73766731312E647464273E3C73766720656E61626C652D6261636B67
+      726F756E643D226E65772030203020333220333222206865696768743D223332
+      7078222069643D22D0A1D0BBD0BED0B95F31222076657273696F6E3D22312E31
+      222076696577426F783D22302030203332203332222077696474683D22333270
+      782220786D6C3A73706163653D2270726573657276652220786D6C6E733D2268
+      7474703A2F2F7777772E77332E6F72672F323030302F7376672220786D6C6E73
+      3A786C696E6B3D22687474703A2F2F7777772E77332E6F72672F313939392F78
+      6C696E6B223E3C7061746820636C69702D72756C653D226576656E6F64642220
+      643D224D31312E3236322C31362E3731346C392E3030322C382E393939202063
+      302E3339352C302E3339342C312E3033352C302E3339342C312E3433312C3063
+      302E3339352D302E3339342C302E3339352D312E3033342C302D312E3432384C
+      31332E3430372C31366C382E3238372D382E32383563302E3339352D302E3339
+      342C302E3339352D312E3033342C302D312E3432392020632D302E3339352D30
+      2E3339342D312E3033362D302E3339342D312E3433312C306C2D392E3030322C
+      382E3939394331302E3837322C31352E3637352C31302E3837322C31362E3332
+      352C31312E3236322C31362E3731347A222066696C6C3D222331323133313322
+      2066696C6C2D72756C653D226576656E6F6464222069643D2243686576726F6E
+      5F5269676874222F3E3C672F3E3C672F3E3C672F3E3C672F3E3C672F3E3C672F
+      3E3C2F7376673E}
     Options.Filtering.Enabled = True
     Options.Sorting.Enabled = True
     Options.Editing.Enabled = False
@@ -931,37 +698,26 @@ object MainView: TMainView
     Connection = XDataWebConnection1
     Left = 360
     Top = 16
-    object XDataWebDataSet1Id: TIntegerField
+    object XDataWebDataSet1id: TIntegerField
       DisplayLabel = 'C'#243'digo'
-      FieldName = 'Id'
+      FieldName = 'id'
     end
-    object XDataWebDataSet1IdCidade: TIntegerField
-      DisplayLabel = 'C'#243'd. Cidade'
-      DisplayWidth = 15
-      FieldName = 'IdCidade'
+    object XDataWebDataSet1nome: TStringField
+      DisplayLabel = 'Nome'
+      FieldName = 'nome'
+      Size = 40
     end
-    object XDataWebDataSet1Nome: TStringField
-      DisplayWidth = 55
-      FieldName = 'Nome'
-      Size = 50
+    object XDataWebDataSet1estoque: TFloatField
+      DisplayLabel = 'Estoque'
+      FieldName = 'estoque'
     end
-    object XDataWebDataSet1Profissao: TStringField
-      DisplayLabel = 'Profiss'#227'o'
-      DisplayWidth = 45
-      FieldName = 'Profissao'
-      Size = 50
+    object XDataWebDataSet1preco: TFloatField
+      DisplayLabel = 'Pre'#231'o'
+      FieldName = 'preco'
     end
-    object XDataWebDataSet1Limite: TFloatField
-      DefaultExpression = ',,0.00'
-      FieldName = 'Limite'
-    end
-    object XDataWebDataSet1Porcentagem: TFloatField
-      DisplayWidth = 15
-      FieldName = 'Porcentagem'
-    end
-    object XDataWebDataSet1Ativo: TBooleanField
-      DisplayWidth = 10
-      FieldName = 'Ativo'
+    object XDataWebDataSet1registro: TIntegerField
+      DisplayLabel = 'Registro'
+      FieldName = 'registro'
     end
   end
   object WebDataSource1: TWebDataSource

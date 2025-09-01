@@ -21,7 +21,7 @@ uses
   XData.Web.Connection,
   WEBLib.DB,
   JS,
-  Clientes.Cadastrar.View,
+  Produtos.Cadastrar.View,
   VCL.TMSFNCTypes,
   VCL.TMSFNCUtils,
   VCL.TMSFNCGraphics,
@@ -54,19 +54,17 @@ type
     XDataWebClient1: TXDataWebClient;
     XDataWebDataSet1: TXDataWebDataSet;
     WebDataSource1: TWebDataSource;
-    XDataWebDataSet1Id: TIntegerField;
-    XDataWebDataSet1IdCidade: TIntegerField;
-    XDataWebDataSet1Nome: TStringField;
-    XDataWebDataSet1Profissao: TStringField;
-    XDataWebDataSet1Limite: TFloatField;
-    XDataWebDataSet1Porcentagem: TFloatField;
     btnListar: TWebButton;
-    XDataWebDataSet1Ativo: TBooleanField;
     btnPost: TWebButton;
     btnAlterar: TWebButton;
     btnDelete: TWebButton;
     TMSFNCDataGrid1: TTMSFNCDataGrid;
     TMSFNCDataGridDatabaseAdapter1: TTMSFNCDataGridDatabaseAdapter;
+    XDataWebDataSet1estoque: TFloatField;
+    XDataWebDataSet1preco: TFloatField;
+    XDataWebDataSet1registro: TIntegerField;
+    XDataWebDataSet1id: TIntegerField;
+    XDataWebDataSet1nome: TStringField;
     procedure lbImportantClick(Sender: TObject);
     [Async]
     procedure lbWarningClick(Sender: TObject);
@@ -88,7 +86,7 @@ type
     procedure XDataWebConnection1Error(Error: TXDataWebConnectionError);
     procedure XDataWebConnection1Request(Args: TXDataWebConnectionRequest);
   private
-    function GetClientePreenchido(const AView: TClientesCadastrarView): TJSObject;
+    function GetProdutoPreenchido(const AView: TProdutosCadastrarView): TJSObject;
   public
 
   end;
@@ -170,7 +168,7 @@ begin
     XDataWebConnection1.Open;
 
   LResponse := TAwait.Exec<TXDataClientResponse>(
-    XDataWebClient1.RawInvokeAsync('IClientesService.GetNome', [StrToIntDef(edtCodigo.Text, 0)]));
+    XDataWebClient1.RawInvokeAsync('IProdutosService.GetNome', [StrToIntDef(edtCodigo.Text, 0)]));
 
   ShowMessage(LResponse.ResponseText);
 end;
@@ -190,7 +188,7 @@ begin
     XDataWebConnection1.Open;
 
   LResponse := TAwait.Exec<TXDataClientResponse>(
-    XDataWebClient1.RawInvokeAsync('IClientesService.Get', [StrToIntDef(edtCodigo.Text, 0)]));
+    XDataWebClient1.RawInvokeAsync('IProdutosService.Get', [StrToIntDef(edtCodigo.Text, 0)]));
 
   XDataWebDataSet1.Close;
   XDataWebDataSet1.SetJsonData(LResponse.Result);
@@ -214,7 +212,7 @@ begin
     XDataWebConnection1.Open;
 
   LResponse := TAwait.Exec<TXDataClientResponse>(
-    XDataWebClient1.RawInvokeAsync('IClientesService.List', []));
+    XDataWebClient1.RawInvokeAsync('IProdutosService.List', []));
 
   XDataWebDataSet1.Close;
   XDataWebDataSet1.SetJsonData(TJSObject(LResponse.Result)['value']);
@@ -240,7 +238,7 @@ begin
     Exit;
 
   LResponse := TAwait.Exec<TXDataClientResponse>(
-    XDataWebClient1.RawInvokeAsync('IClientesService.Delete', [StrToIntDef(edtCodigo.Text, 0)]));
+    XDataWebClient1.RawInvokeAsync('IProdutosService.Delete', [StrToIntDef(edtCodigo.Text, 0)]));
 
   ShowMessage('StatusCode: ' + LResponse.StatusCode.ToString + sLineBreak +
    'ResponseText: ' + LResponse.ResponseText);
@@ -248,38 +246,38 @@ end;
 
 procedure TMainView.btnPostClick(Sender: TObject);
 var
-  LView: TClientesCadastrarView;
+  LView: TProdutosCadastrarView;
   LResponse: TXDataClientResponse;
-  LCliente: TJSObject;
+  LProduto: TJSObject;
 begin
-  LView := TClientesCadastrarView.Create(Self);
+  LView := TProdutosCadastrarView.Create(Self);
   try
     LView.Popup := True;
     LView.Border := fbDialogSizeable;
 
     //CARREGAR ARQUIVO HTML TEMPLATE + CONTROLES
-    TAwait.ExecP<TClientesCadastrarView>(LView.Load());
+    TAwait.ExecP<TProdutosCadastrarView>(LView.Load());
 
     //EXECUTAR FORMULARIO E AGUARDAR FECHAMENTO
     if TAwait.ExecP<TModalResult>(LView.Execute) <> mrOk then
       Exit;
 
-    LCliente := Self.GetClientePreenchido(LView);
+    LProduto := Self.GetProdutoPreenchido(LView);
   finally
     LView.Free;
   end;
 
   LResponse := TAwait.Exec<TXDataClientResponse>(
-    XDataWebClient1.RawInvokeAsync('IClientesService.Post', [LCliente]));
+    XDataWebClient1.RawInvokeAsync('IProdutosService.Post', [LProduto]));
 
   ShowMessage(LResponse.ResponseText);
 end;
 
 procedure TMainView.btnAlterarClick(Sender: TObject);
 var
-  LView: TClientesCadastrarView;
+  LView: TProdutosCadastrarView;
   LResponse: TXDataClientResponse;
-  LCliente: TJSObject;
+  LProduto: TJSObject;
 begin
    if XDataWebDataSet1Id.AsInteger <= 0 then
   begin
@@ -288,46 +286,42 @@ begin
     Exit;
   end;
 
-  LView := TClientesCadastrarView.Create(Self);
+  LView := TProdutosCadastrarView.Create(Self);
   try
     LView.Popup := True;
     LView.Border := fbDialogSizeable;
 
     //CARREGAR ARQUIVO HTML TEMPLATE + CONTROLES
-    TAwait.ExecP<TClientesCadastrarView>(LView.Load());
+    TAwait.ExecP<TProdutosCadastrarView>(LView.Load());
 
     LView.edtCodigo.Text := XDataWebDataSet1Id.AsString;
     LView.edtNome.Text := XDataWebDataSet1Nome.AsString;
-    LView.edtIdCidade.Value := XDataWebDataSet1IdCidade.AsInteger;
-    LView.edtProfissao.Text := XDataWebDataSet1Profissao.AsString;
-    LView.edtPorcentagem.Value := XDataWebDataSet1Porcentagem.AsInteger;
-    LView.edtLimite.Text := XDataWebDataSet1Limite.AsString;
-    LView.ckAtivo.Checked := XDataWebDataSet1Ativo.AsBoolean;
+    LView.edtEstoque.Value := XDataWebDataSet1estoque.AsInteger;
+    LView.edtPreco.Text := XDataWebDataSet1preco.AsString;
+    LView.edtRegistro.Value := XDataWebDataSet1registro.AsInteger;
 
     //EXECUTAR FORMULARIO E AGUARDAR FECHAMENTO
     if TAwait.ExecP<TModalResult>(LView.Execute) <> mrOk then
       Exit;
 
-    LCliente := Self.GetClientePreenchido(LView);
+    LProduto := Self.GetProdutoPreenchido(LView);
   finally
     LView.Free;
   end;
 
   LResponse := TAwait.Exec<TXDataClientResponse>(
-    XDataWebClient1.RawInvokeAsync('IClientesService.Update', [XDataWebDataSet1Id.AsInteger, LCliente]));
+    XDataWebClient1.RawInvokeAsync('IProdutosService.Update', [XDataWebDataSet1Id.AsInteger, LProduto]));
 
   ShowMessage(LResponse.ResponseText);
 end;
 
-function TMainView.GetClientePreenchido(const AView: TClientesCadastrarView): TJSObject;
+function TMainView.GetProdutoPreenchido(const AView: TProdutosCadastrarView): TJSObject;
 begin
   Result := TJSObject.new;
-  Result['IdCidade'] := AView.edtIdCidade.Value;
   Result['Nome'] := AView.edtNome.Text;
-  Result['Profissao'] := AView.edtProfissao.Text;
-  Result['Limite'] := AView.edtLimite.Value;
-  Result['Porcentagem'] := AView.edtPorcentagem.Value;
-  Result['Ativo'] := AView.ckAtivo.Checked;
+  Result['Estoque'] := AView.edtEstoque.Text;
+  Result['Preco'] := AView.edtPreco.Value;
+  Result['Registro'] := AView.edtRegistro.Value;
 end;
 
 end.

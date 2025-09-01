@@ -118,8 +118,8 @@
             <FormType>dfm</FormType>
             <DesignClass>TWebForm</DesignClass>
         </DCCReference>
-        <DCCReference Include="Src\ClientesCadastrar\Clientes.Cadastrar.View.pas">
-            <Form>ClientesCadastrarView</Form>
+        <DCCReference Include="Src\Produtos\Produtos.Cadastrar.View.pas">
+            <Form>ProdutosCadastrarView</Form>
             <FormType>dfm</FormType>
             <DesignClass>TWebForm</DesignClass>
         </DCCReference>
