@@ -23,7 +23,7 @@ type
     function Get(Id: Integer): TProduto;
     function List([FromQuery] Filtros: TProdutoFiltros): TList<TProduto>;
     function Post(Produto: TProduto): Integer;
-    procedure Alterar(Id: Integer; Produto: TProduto);
+    procedure Update(Id: Integer; Produto: TProduto);
     procedure Delete(Id: Integer);
   public
     constructor Create;
@@ -128,7 +128,7 @@ begin
   Result := FDm.QCadastrarid.AsInteger;
 end;
 
-procedure TProdutosService.Alterar(Id: Integer; Produto: TProduto);
+procedure TProdutosService.Update(Id: Integer; Produto: TProduto);
 begin
   FDm.Cadastrar(Id);
 

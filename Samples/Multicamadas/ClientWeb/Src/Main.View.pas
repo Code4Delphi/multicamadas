@@ -60,11 +60,11 @@ type
     btnDelete: TWebButton;
     TMSFNCDataGrid1: TTMSFNCDataGrid;
     TMSFNCDataGridDatabaseAdapter1: TTMSFNCDataGridDatabaseAdapter;
-    XDataWebDataSet1estoque: TFloatField;
-    XDataWebDataSet1preco: TFloatField;
-    XDataWebDataSet1registro: TIntegerField;
-    XDataWebDataSet1id: TIntegerField;
-    XDataWebDataSet1nome: TStringField;
+    XDataWebDataSet1Id: TIntegerField;
+    XDataWebDataSet1Nome: TStringField;
+    XDataWebDataSet1Estoque: TFloatField;
+    XDataWebDataSet1Preco: TFloatField;
+    XDataWebDataSet1Registro: TIntegerField;
     procedure lbImportantClick(Sender: TObject);
     [Async]
     procedure lbWarningClick(Sender: TObject);
@@ -193,11 +193,6 @@ begin
   XDataWebDataSet1.Close;
   XDataWebDataSet1.SetJsonData(LResponse.Result);
   XDataWebDataSet1.Open;
-
-  ShowMessage(XDataWebDataSet1.RecordCount.ToString);
-  ShowMessage(XDataWebDataSet1id.AsString);
-  ShowMessage(XDataWebDataSet1nome.AsString);
-  ShowMessage(XDataWebDataSet1preco.AsString);
 end;
 
 procedure TMainView.btnListarClick(Sender: TObject);
@@ -284,7 +279,7 @@ begin
 
     LView.edtCodigo.Text := XDataWebDataSet1id.AsString;
     LView.edtNome.Text := XDataWebDataSet1nome.AsString;
-    LView.edtEstoque.Value := XDataWebDataSet1estoque.AsInteger;
+    LView.edtEstoque.Text := XDataWebDataSet1estoque.AsString;
     LView.edtPreco.Text := XDataWebDataSet1preco.AsString;
     LView.edtRegistro.Value := XDataWebDataSet1registro.AsInteger;
 
@@ -307,8 +302,8 @@ function TMainView.GetProdutoPreenchido(const AView: TProdutosCadastrarView): TJ
 begin
   Result := TJSObject.new;
   Result['Nome'] := AView.edtNome.Text;
-  Result['Estoque'] := AView.edtEstoque.Text;
-  Result['Preco'] := AView.edtPreco.Value;
+  Result['Estoque'] := StrToFloatDef(AView.edtEstoque.Text, 0);
+  Result['Preco'] := StrToFloatDef(AView.edtPreco.Text, 0);
   Result['Registro'] := AView.edtRegistro.Value;
 end;
 

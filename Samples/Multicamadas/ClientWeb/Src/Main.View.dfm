@@ -683,6 +683,7 @@ object MainView: TMainView
   end
   object XDataWebConnection1: TXDataWebConnection
     URL = 'http://localhost:8000/tms/xdata'
+    Connected = True
     OnError = XDataWebConnection1Error
     OnRequest = XDataWebConnection1Request
     Left = 96
@@ -698,26 +699,23 @@ object MainView: TMainView
     Connection = XDataWebConnection1
     Left = 360
     Top = 16
-    object XDataWebDataSet1id: TIntegerField
-      DisplayLabel = 'C'#243'digo'
-      FieldName = 'id'
+    object XDataWebDataSet1Id: TIntegerField
+      FieldName = 'Id'
     end
-    object XDataWebDataSet1nome: TStringField
-      DisplayLabel = 'Nome'
-      FieldName = 'nome'
+    object XDataWebDataSet1Nome: TStringField
+      FieldName = 'Nome'
       Size = 40
     end
-    object XDataWebDataSet1estoque: TFloatField
-      DisplayLabel = 'Estoque'
-      FieldName = 'estoque'
+    object XDataWebDataSet1Estoque: TFloatField
+      FieldName = 'Estoque'
+      DisplayFormat = ',,0.00'
     end
-    object XDataWebDataSet1preco: TFloatField
-      DisplayLabel = 'Pre'#231'o'
-      FieldName = 'preco'
+    object XDataWebDataSet1Preco: TFloatField
+      FieldName = 'Preco'
+      DisplayFormat = ',,0.00'
     end
-    object XDataWebDataSet1registro: TIntegerField
-      DisplayLabel = 'Registro'
-      FieldName = 'registro'
+    object XDataWebDataSet1Registro: TIntegerField
+      FieldName = 'Registro'
     end
   end
   object WebDataSource1: TWebDataSource

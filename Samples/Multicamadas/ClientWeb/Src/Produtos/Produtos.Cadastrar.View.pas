@@ -13,22 +13,22 @@ uses
   WEBLib.Dialogs,
   Vcl.Controls,
   WEBLib.StdCtrls,
-  Vcl.StdCtrls;
+  Vcl.StdCtrls, Vcl.Mask, WEBLib.Mask;
 
 type
   TProdutosCadastrarView = class(TWebForm)
     lbNome: TWebLabel;
-    btnGravar: TWebButton;
-    btnLimpar: TWebButton;
-    edtNome: TWebEdit;
     lbCodigo: TWebLabel;
     lbEstoque: TWebLabel;
     edtCodigo: TWebEdit;
     lbPreco: TWebLabel;
     lbPorcentagem: TWebLabel;
+    edtNome: TWebEdit;
+    edtEstoque: TWebEdit;
+    edtPreco: TWebEdit;
     edtRegistro: TWebSpinEdit;
-    edtPreco: TWebSpinEdit;
-    edtEstoque: TWebSpinEdit;
+    btnGravar: TWebButton;
+    btnLimpar: TWebButton;
     procedure btnGravarClick(Sender: TObject);
     procedure WebFormShow(Sender: TObject);
     procedure btnLimparClick(Sender: TObject);
@@ -60,8 +60,8 @@ procedure TProdutosCadastrarView.LimparTela;
 begin
   edtCodigo.Text := '';
   edtNome.Text := '';
-  edtEstoque.Value := 0;
-  edtPreco.Value := 0;
+  edtEstoque.Text := '0';
+  edtPreco.Text := '0';
   edtRegistro.Value := 0;
 end;
 
@@ -74,7 +74,7 @@ begin
     Exit;
   end;
 
-    if edtPreco.Value <= 0 then
+  if StrToFloatDef(edtPreco.Text, 0) <= 0 then
   begin
     ShowMessage('Preenchar o campo preço');
     edtPreco.SetFocus;

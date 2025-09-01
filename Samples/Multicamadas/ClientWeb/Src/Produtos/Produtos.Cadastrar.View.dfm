@@ -81,6 +81,83 @@ object ProdutosCadastrarView: TProdutosCadastrarView
     WidthStyle = ssAuto
     WidthPercent = 100.000000000000000000
   end
+  object edtCodigo: TWebEdit
+    Left = 136
+    Top = 141
+    Width = 96
+    Height = 25
+    ChildOrder = 9
+    ElementID = 'edtCodigo'
+    ElementFont = efCSS
+    ElementPosition = epIgnore
+    Enabled = False
+    HeightStyle = ssAuto
+    HeightPercent = 100.000000000000000000
+    Text = 'edtCodigo'
+    WidthStyle = ssAuto
+    WidthPercent = 100.000000000000000000
+  end
+  object edtNome: TWebEdit
+    Left = 136
+    Top = 221
+    Width = 96
+    Height = 25
+    ChildOrder = 4
+    ElementID = 'edtNome'
+    ElementFont = efCSS
+    ElementPosition = epIgnore
+    HeightStyle = ssAuto
+    HeightPercent = 100.000000000000000000
+    Text = 'edtNome'
+    WidthStyle = ssAuto
+    WidthPercent = 100.000000000000000000
+  end
+  object edtEstoque: TWebEdit
+    Left = 256
+    Top = 221
+    Width = 96
+    Height = 25
+    ChildOrder = 4
+    ElementID = 'edtEstoque'
+    ElementFont = efCSS
+    ElementPosition = epIgnore
+    HeightStyle = ssAuto
+    HeightPercent = 100.000000000000000000
+    Text = 'edtEstoque'
+    WidthStyle = ssAuto
+    WidthPercent = 100.000000000000000000
+  end
+  object edtPreco: TWebEdit
+    Left = 136
+    Top = 291
+    Width = 96
+    Height = 25
+    ChildOrder = 4
+    ElementID = 'edtPreco'
+    ElementFont = efCSS
+    ElementPosition = epIgnore
+    HeightStyle = ssAuto
+    HeightPercent = 100.000000000000000000
+    Text = 'edtPreco'
+    WidthStyle = ssAuto
+    WidthPercent = 100.000000000000000000
+  end
+  object edtRegistro: TWebSpinEdit
+    Left = 256
+    Top = 288
+    Width = 150
+    Height = 22
+    ElementID = 'edtRegistro'
+    AutoSize = False
+    BorderStyle = bsSingle
+    ChildOrder = 12
+    Color = clWhite
+    Increment = 1
+    MaxValue = 100
+    MinValue = 0
+    Role = ''
+    Value = 0
+  end
   object btnGravar: TWebButton
     Left = 120
     Top = 384
@@ -112,95 +189,5 @@ object ProdutosCadastrarView: TProdutosCadastrarView
     WidthStyle = ssAuto
     WidthPercent = 100.000000000000000000
     OnClick = btnLimparClick
-  end
-  object edtNome: TWebEdit
-    Left = 136
-    Top = 221
-    Width = 96
-    Height = 25
-    ChildOrder = 4
-    ElementID = 'edtNome'
-    ElementFont = efCSS
-    ElementPosition = epIgnore
-    HeightStyle = ssAuto
-    HeightPercent = 100.000000000000000000
-    Text = 'edtNome'
-    WidthStyle = ssAuto
-    WidthPercent = 100.000000000000000000
-  end
-  object edtCodigo: TWebEdit
-    Left = 136
-    Top = 141
-    Width = 96
-    Height = 25
-    ChildOrder = 9
-    ElementID = 'edtCodigo'
-    ElementFont = efCSS
-    ElementPosition = epIgnore
-    HeightStyle = ssAuto
-    HeightPercent = 100.000000000000000000
-    Text = 'edtCodigo'
-    WidthStyle = ssAuto
-    WidthPercent = 100.000000000000000000
-  end
-  object edtRegistro: TWebSpinEdit
-    Left = 256
-    Top = 291
-    Width = 96
-    Height = 25
-    ElementID = 'edtRegistro'
-    HeightStyle = ssAuto
-    WidthStyle = ssAuto
-    AutoSize = False
-    BorderStyle = bsSingle
-    ChildOrder = 12
-    Color = clWhite
-    ElementFont = efCSS
-    ElementPosition = epIgnore
-    Increment = 1
-    MaxValue = 100
-    MinValue = 0
-    Role = ''
-    Value = 0
-  end
-  object edtPreco: TWebSpinEdit
-    Left = 136
-    Top = 291
-    Width = 96
-    Height = 25
-    ElementID = 'edtPreco'
-    HeightStyle = ssAuto
-    WidthStyle = ssAuto
-    AutoSize = False
-    BorderStyle = bsSingle
-    ChildOrder = 13
-    Color = clWhite
-    ElementFont = efCSS
-    ElementPosition = epIgnore
-    Increment = 1
-    MaxValue = 0
-    MinValue = 0
-    Role = ''
-    Value = 0
-  end
-  object edtEstoque: TWebSpinEdit
-    Left = 256
-    Top = 221
-    Width = 96
-    Height = 25
-    ElementID = 'edtEstoque'
-    HeightStyle = ssAuto
-    WidthStyle = ssAuto
-    AutoSize = False
-    BorderStyle = bsSingle
-    ChildOrder = 13
-    Color = clWhite
-    ElementFont = efCSS
-    ElementPosition = epIgnore
-    Increment = 1
-    MaxValue = 0
-    MinValue = 0
-    Role = ''
-    Value = 0
   end
 end

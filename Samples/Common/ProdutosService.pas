@@ -27,7 +27,7 @@ type
     [HttpPost, Route('')]
     function Post(Produto: TProduto): Integer;
     [HttpPut, Route('{id}')]
-    procedure Alterar(Id: Integer; Produto: TProduto);
+    procedure Update(Id: Integer; Produto: TProduto);
     [HttpDelete, Route('{id}')]
     procedure Delete(Id: Integer);
   end;
