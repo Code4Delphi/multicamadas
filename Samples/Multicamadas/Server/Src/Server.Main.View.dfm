@@ -1,7 +1,7 @@
 object ServerMainView: TServerMainView
   Left = 0
   Top = 0
-  Caption = 'Multicamadas - Server'
+  Caption = 'Server - Multicamadas Code4Delphi'
   ClientHeight = 378
   ClientWidth = 570
   Color = clBtnFace

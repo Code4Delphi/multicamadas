@@ -95,7 +95,7 @@ object MainView: TMainView
       ChildOrder = 1
       ElementID = 'edtId'
       HeightPercent = 100.000000000000000000
-      Text = '20'
+      Text = '10'
       WidthPercent = 100.000000000000000000
     end
     object btnGetNome: TWebButton

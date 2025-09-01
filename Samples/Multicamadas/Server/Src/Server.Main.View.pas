@@ -51,7 +51,7 @@ begin
   if XDataDM.SparkleHttpSysDispatcher1.Active then
     mmLog.Lines.Add('Servidor iniciado em: ' + Self.GetServerBaseUrl)
   else
-    mmLog.Lines.Add('## Desconectado ##');
+    mmLog.Lines.Add('Servidor parado');
 end;
 
 function TServerMainView.GetServerBaseUrl: string;

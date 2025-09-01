@@ -106,7 +106,7 @@ begin
     Exit;
   end;
 
-  ShowMessage('Token: ' + Configs_Token);
+  //ShowMessage('Token: ' + Configs_Token);
 
   MainView := TMainView.CreateNew;
   MainView.ShowModal;

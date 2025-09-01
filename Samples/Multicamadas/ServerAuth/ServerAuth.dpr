@@ -12,6 +12,7 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
+  Application.Title := 'ServerAuth - Multicamadas C4D';
   Application.CreateForm(TServerAuthXDataDM, ServerAuthXDataDM);
   Application.CreateForm(TServerAuthMainView, ServerAuthMainView);
   Application.Run;

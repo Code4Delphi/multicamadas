@@ -1,7 +1,7 @@
 object ServerAuthMainView: TServerAuthMainView
   Left = 0
   Top = 0
-  Caption = 'ServerAuthMainView'
+  Caption = 'ServerAuth - Multicamadas Code4Delphi'
   ClientHeight = 343
   ClientWidth = 545
   Color = clBtnFace

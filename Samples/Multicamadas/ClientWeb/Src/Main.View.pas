@@ -194,14 +194,10 @@ begin
   XDataWebDataSet1.SetJsonData(LResponse.Result);
   XDataWebDataSet1.Open;
 
-//  mmTeste.Lines.Clear;
-//  mmTeste.Lines.Add('Id: ' + XDataWebDataSet1Id.AsString);
-//  mmTeste.Lines.Add('Id Cidade: ' + XDataWebDataSet1IdCidade.AsString);
-//  mmTeste.Lines.Add('Nome: ' +  XDataWebDataSet1Nome.AsString);
-//  mmTeste.Lines.Add('Profissão: ' +  XDataWebDataSet1Profissao.AsString);
-//  mmTeste.Lines.Add('Limite: ' +  XDataWebDataSet1Limite.AsString);
-//  mmTeste.Lines.Add('Porcentagem: ' +  XDataWebDataSet1Porcentagem.AsString);
-//  mmTeste.Lines.Add('Ativo: ' +  XDataWebDataSet1Ativo.AsString);
+  ShowMessage(XDataWebDataSet1.RecordCount.ToString);
+  ShowMessage(XDataWebDataSet1id.AsString);
+  ShowMessage(XDataWebDataSet1nome.AsString);
+  ShowMessage(XDataWebDataSet1preco.AsString);
 end;
 
 procedure TMainView.btnListarClick(Sender: TObject);
@@ -217,14 +213,6 @@ begin
   XDataWebDataSet1.Close;
   XDataWebDataSet1.SetJsonData(TJSObject(LResponse.Result)['value']);
   XDataWebDataSet1.Open;
-
-//  XDataWebDataSet1.First;
-//  while not XDataWebDataSet1.Eof do
-//  begin
-//    mmTeste.Lines.Add(XDataWebDataSet1Id.AsString + ' - ' +
-//      XDataWebDataSet1Nome.AsString + ' - ' + XDataWebDataSet1Profissao.AsString);
-//    XDataWebDataSet1.Next;
-//  end;
 end;
 
 procedure TMainView.btnDeleteClick(Sender: TObject);
@@ -279,7 +267,7 @@ var
   LResponse: TXDataClientResponse;
   LProduto: TJSObject;
 begin
-   if XDataWebDataSet1Id.AsInteger <= 0 then
+   if XDataWebDataSet1id.AsInteger <= 0 then
   begin
     MessageDlg('Informe o código desejado', mtInformation, []);
     edtCodigo.SetFocus;
@@ -294,8 +282,8 @@ begin
     //CARREGAR ARQUIVO HTML TEMPLATE + CONTROLES
     TAwait.ExecP<TProdutosCadastrarView>(LView.Load());
 
-    LView.edtCodigo.Text := XDataWebDataSet1Id.AsString;
-    LView.edtNome.Text := XDataWebDataSet1Nome.AsString;
+    LView.edtCodigo.Text := XDataWebDataSet1id.AsString;
+    LView.edtNome.Text := XDataWebDataSet1nome.AsString;
     LView.edtEstoque.Value := XDataWebDataSet1estoque.AsInteger;
     LView.edtPreco.Text := XDataWebDataSet1preco.AsString;
     LView.edtRegistro.Value := XDataWebDataSet1registro.AsInteger;
