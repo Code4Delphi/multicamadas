@@ -29,7 +29,6 @@ object ProdutosCadastrarView: TProdutosCadastrarView
     Padding.Right = 2
     Padding.Bottom = 2
     TabOrder = 0
-    ExplicitTop = 161
     object btnGravar: TBitBtn
       Left = 414
       Top = 3
@@ -168,7 +167,6 @@ object ProdutosCadastrarView: TProdutosCadastrarView
     Height = 155
     Align = alClient
     TabOrder = 1
-    ExplicitTop = -3
     object Label1: TLabel
       Left = 27
       Top = 27

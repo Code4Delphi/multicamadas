@@ -76,7 +76,7 @@ begin
   FIdAlterar := 0;
   FIdSelecionado := 0;
   FXDataClient := TXDataClient.Create;
-  FXDataClient.Uri := 'http://localhost:2001/tms/xdata/';
+  FXDataClient.Uri := 'http://localhost:8000/tms/xdata/';
 end;
 
 procedure TProdutosCadastrarView.FormDestroy(Sender: TObject);

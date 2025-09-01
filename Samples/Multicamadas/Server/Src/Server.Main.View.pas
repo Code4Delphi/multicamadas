@@ -19,12 +19,13 @@ type
   TServerMainView = class(TForm)
     btnStart: TButton;
     btnStop: TButton;
-    Memo1: TMemo;
+    mmLog: TMemo;
     procedure btnStartClick(Sender: TObject);
     procedure btnStopClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
     procedure UpdateScreen;
+    function GetServerBaseUrl: string;
   public
 
   end;
@@ -48,9 +49,17 @@ begin
   btnStop.Enabled := not btnStart.Enabled;
 
   if XDataDM.SparkleHttpSysDispatcher1.Active then
-    Memo1.Lines.Add('## Conectado' + sLineBreak + XDataDM.XDataServer1.BaseUrl)
+    mmLog.Lines.Add('Servidor iniciado em: ' + Self.GetServerBaseUrl)
   else
-    Memo1.Lines.Add('## Desconectado ##');
+    mmLog.Lines.Add('## Desconectado ##');
+end;
+
+function TServerMainView.GetServerBaseUrl: string;
+const
+  HTTP = 'http://+';
+  HTTP_LOCALHOST = 'http://localhost';
+begin
+  Result := XDataDM.XDataServer1.BaseUrl.Replace(HTTP, HTTP_LOCALHOST, [rfIgnoreCase]);
 end;
 
 procedure TServerMainView.btnStartClick(Sender: TObject);

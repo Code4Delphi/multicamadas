@@ -82,7 +82,7 @@ implementation
 procedure TProdutosBuscarView.FormCreate(Sender: TObject);
 begin
   FXDataClient := TXDataClient.Create;
-  FXDataClient.Uri := 'http://localhost:2001/tms/xdata/';
+  FXDataClient.Uri := 'http://localhost:8000/tms/xdata/';
 
   FList := TList<TProduto>.Create;
 end;

@@ -6,7 +6,7 @@ object XDataDM: TXDataDM
     Top = 64
   end
   object XDataServer1: TXDataServer
-    BaseUrl = 'http://localhost:2001/tms/xdata'
+    BaseUrl = 'http://+:8000/tms/xdata'
     Dispatcher = SparkleHttpSysDispatcher1
     EntitySetPermissions = <>
     Left = 136

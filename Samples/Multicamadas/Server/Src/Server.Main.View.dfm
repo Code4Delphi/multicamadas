@@ -32,7 +32,7 @@ object ServerMainView: TServerMainView
     TabOrder = 1
     OnClick = btnStopClick
   end
-  object Memo1: TMemo
+  object mmLog: TMemo
     Left = 32
     Top = 72
     Width = 489
