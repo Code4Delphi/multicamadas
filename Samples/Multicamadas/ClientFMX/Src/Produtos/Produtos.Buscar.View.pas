@@ -69,6 +69,9 @@ type
 
   end;
 
+var
+  ProdutosBuscarView: TProdutosBuscarView;
+
 implementation
 
 {$R *.fmx}
@@ -76,7 +79,7 @@ implementation
 procedure TProdutosBuscarView.FormCreate(Sender: TObject);
 begin
   FXDataClient := TXDataClient.Create;
-  FXDataClient.Uri := 'http://localhost:2001/tms/xdata/';
+  FXDataClient.Uri := 'http://localhost:8000/tms/xdata/';
 
   FList := TList<TProduto>.Create;
 end;
@@ -95,11 +98,6 @@ end;
 procedure TProdutosBuscarView.btnVoltarClick(Sender: TObject);
 begin
   Self.Close;
-end;
-
-procedure TProdutosBuscarView.btnNovoClick(Sender: TObject);
-begin
-  //
 end;
 
 procedure TProdutosBuscarView.btnBuscarClick(Sender: TObject);
@@ -147,6 +145,14 @@ begin
   begin
     ListBox1.Items.AddObject(Format('%D - %S', [LProdutos.Id, LProdutos.Nome]), LProdutos);
   end;
+end;
+
+procedure TProdutosBuscarView.btnNovoClick(Sender: TObject);
+var
+  LView: TProdutosCadastrarView;
+begin
+  LView := TProdutosCadastrarView.Create(nil);
+  LView.Show;
 end;
 
 end.

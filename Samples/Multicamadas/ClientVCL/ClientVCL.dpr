@@ -13,6 +13,7 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
+  Application.Title := 'Client VCL - Multicamadas C4D';
   Application.CreateForm(TClientVCLMainView, ClientVCLMainView);
   Application.Run;
 end.

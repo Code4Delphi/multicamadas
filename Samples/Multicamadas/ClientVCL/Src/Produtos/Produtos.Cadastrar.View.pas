@@ -189,7 +189,7 @@ var
   FProdutosService: IProdutosService;
 begin
   FProdutosService := FXDataClient.Service<IProdutosService>;
-  FProdutosService.Alterar(TProduto(AObject).Id, TProduto(AObject));
+  FProdutosService.Update(TProduto(AObject).Id, TProduto(AObject));
 end;
 
 end.

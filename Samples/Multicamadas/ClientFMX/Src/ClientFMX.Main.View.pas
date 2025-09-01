@@ -16,7 +16,7 @@ uses
   FMX.StdCtrls,
   FMX.Controls.Presentation,
   FMX.Objects,
-  Produtos.Cadastrar.View;
+  Produtos.Buscar.View;
 
 type
   TClientFMXMainView = class(TForm)
@@ -43,9 +43,9 @@ end;
 
 procedure TClientFMXMainView.Button1Click(Sender: TObject);
 var
-  LView: TProdutosCadastrarView;
+  LView: TProdutosBuscarView;
 begin
-  LView := TProdutosCadastrarView.Create(nil);
+  LView := TProdutosBuscarView.Create(nil);
   LView.Show;
 end;
 

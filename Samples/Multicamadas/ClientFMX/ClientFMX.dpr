@@ -14,6 +14,5 @@ uses
 begin
   Application.Initialize;
   Application.CreateForm(TClientFMXMainView, ClientFMXMainView);
-  Application.CreateForm(TProdutosCadastrarView, ProdutosCadastrarView);
   Application.Run;
 end.
