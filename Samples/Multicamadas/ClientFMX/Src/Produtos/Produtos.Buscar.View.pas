@@ -23,10 +23,10 @@ uses
   FMX.ListBox,
   Data.DB,
   XData.Client,
-  //.Bind.BaseDataset,
-  //Aurelius.Bind.Dataset,
   Produtos.DTO,
-  ProdutosService;
+  ProdutosService,
+  Produtos.Cadastrar.View2,
+  ClientFMX.Consts;
 
 type
   TProdutosBuscarView = class(TForm)
@@ -60,6 +60,7 @@ type
     procedure FormDestroy(Sender: TObject);
     procedure ListBox1Click(Sender: TObject);
     procedure btnNovoClick(Sender: TObject);
+    procedure btnAlterarClick(Sender: TObject);
   private
     FXDataClient: TXDataClient;
     FList: TList<TProduto>;
@@ -69,17 +70,15 @@ type
 
   end;
 
-var
-  ProdutosBuscarView: TProdutosBuscarView;
-
 implementation
 
 {$R *.fmx}
 
+
 procedure TProdutosBuscarView.FormCreate(Sender: TObject);
 begin
   FXDataClient := TXDataClient.Create;
-  FXDataClient.Uri := 'http://localhost:8000/tms/xdata/';
+  FXDataClient.Uri := C_URI;
 
   FList := TList<TProduto>.Create;
 end;
@@ -110,25 +109,21 @@ var
   LProdutosService: IProdutosService;
   LFiltros: TProdutoFiltros;
 begin
+  ListBox1.Clear;
+  LProdutosService := FXDataClient.Service<IProdutosService>;
+  FreeAndNil(FList);
+
+  LFiltros := TProdutoFiltros.Create;
   try
-    ListBox1.Clear;
-    LProdutosService := FXDataClient.Service<IProdutosService>;
-    FreeAndNil(FList);
-
-    LFiltros := TProdutoFiltros.Create;
-    try
-      LFiltros.Nome := edtBuscar.Text;
-      FList := LProdutosService.List(LFiltros);
-    finally
-      LFiltros.Free;
-    end;
-
-    lytSemRegistros.Visible := FList.Count <= 0;
-
-    Self.ScreenProdutos;
+    LFiltros.Nome := edtBuscar.Text;
+    FList := LProdutosService.List(LFiltros);
   finally
-    //Screen.Cursor := crDefault;
+    LFiltros.Free;
   end;
+
+  lytSemRegistros.Visible := FList.Count <= 0;
+
+  Self.ScreenProdutos;
 end;
 
 procedure TProdutosBuscarView.ListBox1Click(Sender: TObject);
@@ -138,20 +133,24 @@ begin
 end;
 
 procedure TProdutosBuscarView.ScreenProdutos;
-var
-  LProdutos: TProduto;
 begin
-  for LProdutos in FList do
-  begin
+  for var LProdutos in FList do
     ListBox1.Items.AddObject(Format('%D - %S', [LProdutos.Id, LProdutos.Nome]), LProdutos);
-  end;
 end;
 
 procedure TProdutosBuscarView.btnNovoClick(Sender: TObject);
-var
-  LView: TProdutosCadastrarView;
 begin
-  LView := TProdutosCadastrarView.Create(nil);
+  var LView := TProdutosCadastrarView2.Create(nil);
+  LView.Show;
+end;
+
+procedure TProdutosBuscarView.btnAlterarClick(Sender: TObject);
+begin
+  if not Assigned(ListBox1.Selected) then
+    raise Exception.Create('Selecione um registro');
+
+  var LView := TProdutosCadastrarView2.Create(nil);
+  LView.IdAlterar := TProduto(ListBox1.Selected.Data).Id;
   LView.Show;
 end;
 

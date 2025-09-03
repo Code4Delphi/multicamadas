@@ -5,11 +5,10 @@
         <FrameworkType>FMX</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <Platform Condition="'$(Platform)'==''">Android64</Platform>
         <TargetedPlatforms>32787</TargetedPlatforms>
         <AppType>Application</AppType>
         <MainSource>ClientFMX.dpr</MainSource>
-        <ProjectName Condition="'$(ProjectName)'==''">ClientFMX</ProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -240,10 +239,11 @@
         </DCCReference>
         <DCCReference Include="..\..\Common\Produtos.DTO.pas"/>
         <DCCReference Include="..\..\Common\ProdutosService.pas"/>
-        <DCCReference Include="Src\Produtos\Produtos.Cadastrar.View.pas">
-            <Form>ProdutosCadastrarView</Form>
+        <DCCReference Include="Src\Produtos\Produtos.Cadastrar.View2.pas">
+            <Form>ProdutosCadastrarView2</Form>
             <FormType>fmx</FormType>
         </DCCReference>
+        <DCCReference Include="Src\ClientFMX.Consts.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

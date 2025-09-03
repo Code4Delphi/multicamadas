@@ -241,7 +241,7 @@ object ProdutosBuscarView: TProdutosBuscarView
         StyleLookup = 'TransparentRoundButton'
         TabOrder = 1
         TextSettings.Trimming = None
-        OnClick = btnNovoClick
+        OnClick = btnAlterarClick
         object imgAlterar: TPath
           Align = Center
           Data.Path = {

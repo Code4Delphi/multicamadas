@@ -1,4 +1,4 @@
-object ProdutosCadastrarView: TProdutosCadastrarView
+object ProdutosCadastrarView2: TProdutosCadastrarView2
   Left = 0
   Top = 0
   Caption = 'Form1'
@@ -7,7 +7,10 @@ object ProdutosCadastrarView: TProdutosCadastrarView
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
   OnClose = FormClose
+  OnDestroy = FormDestroy
+  OnShow = FormShow
   DesignerMasterStyle = 0
   object retHeader: TRectangle
     Align = Top
@@ -47,7 +50,7 @@ object ProdutosCadastrarView: TProdutosCadastrarView
         WrapMode = Fit
       end
     end
-    object btnAlterar: TButton
+    object btnConfirmar: TButton
       Align = Right
       Margins.Left = 3.000000000000000000
       Margins.Top = 1.000000000000000000
@@ -60,7 +63,8 @@ object ProdutosCadastrarView: TProdutosCadastrarView
       StyleLookup = 'TransparentRoundButton'
       TabOrder = 2
       TextSettings.Trimming = None
-      object imgAlterar: TPath
+      OnClick = btnConfirmarClick
+      object imgConfirmar: TPath
         Align = Center
         Data.Path = {
           070000000000000000001041295C8141010000005C8F9A400000404101000000
@@ -90,7 +94,7 @@ object ProdutosCadastrarView: TProdutosCadastrarView
       TabOrder = 1
     end
   end
-  object retBack: TRectangle
+  object retCorpo: TRectangle
     Align = Client
     Fill.Color = claWhite
     Padding.Left = 10.000000000000000000
