@@ -4,7 +4,7 @@ interface
 
 const
   //C_URI = 'http://localhost:8000/tms/xdata/';
-  C_URI = 'https://518d323c6167.ngrok-free.app/tms/xdata/';
+  C_URI = 'https://2e6e5cb6be94.ngrok-free.app/tms/xdata/';
 
 implementation
 

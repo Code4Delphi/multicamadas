@@ -21,6 +21,7 @@ uses
   FMX.Edit,
   FMX.Layouts,
   FMX.ListBox,
+  FMX.DialogService,
   Data.DB,
   XData.Client,
   Produtos.DTO,
@@ -30,7 +31,7 @@ uses
 
 type
   TProdutosBuscarView = class(TForm)
-    lytContent: TLayout;
+    lytTudo: TLayout;
     retContent: TRectangle;
     lytSemRegistros: TLayout;
     imgSemRegistro: TPath;
@@ -40,19 +41,18 @@ type
     btnListar: TButton;
     imgListar: TPath;
     edtBuscar: TEdit;
-    ShadowEffect: TShadowEffect;
-    retFooter: TRectangle;
-    btnAnterior: TButton;
-    imgAnterior: TPath;
-    btnProximo: TButton;
-    imgProximo: TPath;
-    lblPaginas: TLabel;
+    S: TShadowEffect;
     ListBox1: TListBox;
     txtBuscaVazia: TLabel;
+    Rectangle1: TRectangle;
     btnNovo: TButton;
     imgNovo: TPath;
     btnAlterar: TButton;
     imgAlterar: TPath;
+    btnExcluir: TButton;
+    imgExcluir: TPath;
+    lbTotal: TLabel;
+    Label1: TLabel;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnVoltarClick(Sender: TObject);
     procedure btnListarClick(Sender: TObject);
@@ -60,6 +60,7 @@ type
     procedure FormDestroy(Sender: TObject);
     procedure btnNovoClick(Sender: TObject);
     procedure btnAlterarClick(Sender: TObject);
+    procedure btnExcluirClick(Sender: TObject);
   private
     FXDataClient: TXDataClient;
     FList: TList<TProduto>;
@@ -109,6 +110,7 @@ var
   LFiltros: TProdutoFiltros;
 begin
   ListBox1.Clear;
+  lbTotal.Text := '0';
   LProdutosService := FXDataClient.Service<IProdutosService>;
   FreeAndNil(FList);
 
@@ -121,7 +123,7 @@ begin
   end;
 
   lytSemRegistros.Visible := FList.Count <= 0;
-
+  lbTotal.Text := FList.Count.ToString;
   Self.ScreenProdutos;
 end;
 
@@ -153,6 +155,22 @@ begin
     procedure(ModalResult: TModalResult)
     begin
       Self.ListarDados;
+    end);
+end;
+
+procedure TProdutosBuscarView.btnExcluirClick(Sender: TObject);
+begin
+  if not Assigned(ListBox1.Selected) then
+    raise Exception.Create('Selecione um registro');
+
+  TDialogService.MessageDialog('Confirma exclusão?', TMsgDlgType.mtConfirmation, [TMsgDlgBtn.mbYes, TMsgDlgBtn.mbNo], TMsgDlgBtn.mbNo, 0,
+    procedure(const AResult: TModalResult)
+    begin
+      if AResult = mrYes then
+      begin
+         FXDataClient.Service<IProdutosService>.Delete(TProduto(ListBox1.Selected.Data).Id);
+         Self.ListarDados;
+      end;
     end);
 end;
 

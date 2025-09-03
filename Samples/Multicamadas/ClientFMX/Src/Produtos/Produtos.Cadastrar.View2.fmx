@@ -1,6 +1,7 @@
 object ProdutosCadastrarView2: TProdutosCadastrarView2
   Left = 0
   Top = 0
+  ActiveControl = btnConfirmar
   Caption = 'Form1'
   ClientHeight = 500
   ClientWidth = 350
@@ -41,7 +42,7 @@ object ProdutosCadastrarView2: TProdutosCadastrarView2
           01000000B81E85400000404101000000AE4741415C8F82400100000000005841
           0000B040010000000000004100003041010000000000A0410000304103000000
           0000A04100003041}
-        Fill.Color = xFF9B9B9B
+        Fill.Color = claRoyalblue
         HitTest = False
         Size.Width = 24.000000000000000000
         Size.Height = 24.000000000000000000
@@ -70,7 +71,7 @@ object ProdutosCadastrarView2: TProdutosCadastrarView2
           070000000000000000001041295C8141010000005C8F9A400000404101000000
           703D5A405C8F5641010000000000104100009841010000000000A8410000E040
           0100000052B89C4148E1B2400300000000001041295C8141}
-        Fill.Color = xFF9B9B9B
+        Fill.Color = claRoyalblue
         HitTest = False
         Size.Width = 24.000000000000000000
         Size.Height = 28.000000000000000000
@@ -86,15 +87,15 @@ object ProdutosCadastrarView2: TProdutosCadastrarView2
       Size.Width = 248.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
-      TextSettings.Font.Family = 'Roboto'
       TextSettings.Font.Size = 15.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
       TextSettings.FontColor = xFF5F5F60
       TextSettings.HorzAlign = Center
       Text = 'Produtos'
       TabOrder = 1
     end
   end
-  object retCorpo: TRectangle
+  object S: TRectangle
     Align = Client
     Fill.Color = claWhite
     Padding.Left = 10.000000000000000000
@@ -107,22 +108,24 @@ object ProdutosCadastrarView2: TProdutosCadastrarView2
     Stroke.Kind = None
     object lbNome: TLabel
       Align = Top
-      StyledSettings = [Size, Style, FontColor]
+      StyledSettings = [Size, FontColor]
+      Margins.Bottom = 6.000000000000000000
       Position.X = 10.000000000000000000
       Position.Y = 10.000000000000000000
       Size.Width = 330.000000000000000000
-      Size.Height = 17.000000000000000000
+      Size.Height = 21.000000000000000000
       Size.PlatformDefault = False
-      TextSettings.Font.Family = 'Roboto'
+      TextSettings.Font.StyleExt = {00060000000000000004000000}
       Text = 'Nome'
-      TabOrder = 6
+      TabOrder = 7
     end
     object edtNome: TEdit
       Touch.InteractiveGestures = [LongTap, DoubleTap]
       Align = Top
-      TabOrder = 7
+      TabOrder = 0
+      ReturnKeyType = Next
       Position.X = 10.000000000000000000
-      Position.Y = 27.000000000000000000
+      Position.Y = 37.000000000000000000
       Margins.Bottom = 15.000000000000000000
       Size.Width = 330.000000000000000000
       Size.Height = 22.000000000000000000
@@ -130,22 +133,24 @@ object ProdutosCadastrarView2: TProdutosCadastrarView2
     end
     object lbEstoque: TLabel
       Align = Top
-      StyledSettings = [Size, Style, FontColor]
+      StyledSettings = [Size, FontColor]
+      Margins.Bottom = 6.000000000000000000
       Position.X = 10.000000000000000000
-      Position.Y = 64.000000000000000000
+      Position.Y = 74.000000000000000000
       Size.Width = 330.000000000000000000
-      Size.Height = 17.000000000000000000
+      Size.Height = 21.000000000000000000
       Size.PlatformDefault = False
-      TextSettings.Font.Family = 'Roboto'
+      TextSettings.Font.StyleExt = {00060000000000000004000000}
       Text = 'Estoque'
-      TabOrder = 4
+      TabOrder = 6
     end
     object edtEstoque: TEdit
       Touch.InteractiveGestures = [LongTap, DoubleTap]
       Align = Top
-      TabOrder = 5
+      TabOrder = 1
+      ReturnKeyType = Next
       Position.X = 10.000000000000000000
-      Position.Y = 81.000000000000000000
+      Position.Y = 101.000000000000000000
       Margins.Bottom = 15.000000000000000000
       Size.Width = 330.000000000000000000
       Size.Height = 22.000000000000000000
@@ -153,22 +158,24 @@ object ProdutosCadastrarView2: TProdutosCadastrarView2
     end
     object lbPreco: TLabel
       Align = Top
-      StyledSettings = [Size, Style, FontColor]
+      StyledSettings = [Size, FontColor]
+      Margins.Bottom = 6.000000000000000000
       Position.X = 10.000000000000000000
-      Position.Y = 118.000000000000000000
+      Position.Y = 138.000000000000000000
       Size.Width = 330.000000000000000000
-      Size.Height = 17.000000000000000000
+      Size.Height = 21.000000000000000000
       Size.PlatformDefault = False
-      TextSettings.Font.Family = 'Roboto'
+      TextSettings.Font.StyleExt = {00060000000000000004000000}
       Text = 'Pre'#231'o'
-      TabOrder = 2
+      TabOrder = 5
     end
     object edtPreco: TEdit
       Touch.InteractiveGestures = [LongTap, DoubleTap]
       Align = Top
-      TabOrder = 3
+      TabOrder = 2
+      ReturnKeyType = Next
       Position.X = 10.000000000000000000
-      Position.Y = 135.000000000000000000
+      Position.Y = 165.000000000000000000
       Margins.Bottom = 15.000000000000000000
       Size.Width = 330.000000000000000000
       Size.Height = 22.000000000000000000
@@ -176,26 +183,29 @@ object ProdutosCadastrarView2: TProdutosCadastrarView2
     end
     object lbRegistro: TLabel
       Align = Top
-      StyledSettings = [Size, Style, FontColor]
+      StyledSettings = [Size, FontColor]
+      Margins.Bottom = 6.000000000000000000
       Position.X = 10.000000000000000000
-      Position.Y = 172.000000000000000000
+      Position.Y = 202.000000000000000000
       Size.Width = 330.000000000000000000
-      Size.Height = 17.000000000000000000
+      Size.Height = 21.000000000000000000
       Size.PlatformDefault = False
-      TextSettings.Font.Family = 'Roboto'
+      TextSettings.Font.StyleExt = {00060000000000000004000000}
       Text = 'Registro'
-      TabOrder = 0
+      TabOrder = 4
     end
     object edtRegistro: TEdit
       Touch.InteractiveGestures = [LongTap, DoubleTap]
       Align = Top
-      TabOrder = 1
+      TabOrder = 3
+      ReturnKeyType = Go
       Position.X = 10.000000000000000000
-      Position.Y = 189.000000000000000000
+      Position.Y = 229.000000000000000000
       Margins.Bottom = 15.000000000000000000
       Size.Width = 330.000000000000000000
       Size.Height = 22.000000000000000000
       Size.PlatformDefault = False
+      OnKeyDown = edtRegistroKeyDown
     end
   end
 end

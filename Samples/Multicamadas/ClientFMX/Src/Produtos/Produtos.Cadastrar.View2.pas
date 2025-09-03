@@ -30,7 +30,7 @@ type
     btnConfirmar: TButton;
     imgConfirmar: TPath;
     txtBuscaVazia: TLabel;
-    retCorpo: TRectangle;
+    S: TRectangle;
     lbNome: TLabel;
     edtNome: TEdit;
     lbEstoque: TLabel;
@@ -45,6 +45,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure edtRegistroKeyDown(Sender: TObject; var Key: Word; var KeyChar: WideChar; Shift: TShiftState);
   private
     FXDataClient: TXDataClient;
     FProduto: TProduto;
@@ -95,6 +96,12 @@ begin
   edtEstoque.Text := FProduto.Estoque.ToString;
   edtPreco.Text := FProduto.Preco.ToString;
   edtRegistro.Text := FProduto.Registro.ToString;
+end;
+
+procedure TProdutosCadastrarView2.edtRegistroKeyDown(Sender: TObject; var Key: Word; var KeyChar: WideChar;  Shift: TShiftState);
+begin
+  if Key = vkReturn then
+    btnConfirmarClick(btnConfirmar);
 end;
 
 procedure TProdutosCadastrarView2.btnVoltarClick(Sender: TObject);

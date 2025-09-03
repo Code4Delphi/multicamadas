@@ -352,6 +352,7 @@ object ProdutosBuscarView: TProdutosBuscarView
         8176B88285FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
       TabOrder = 4
       OnClick = btnAtualizarClick
+      ExplicitTop = 6
     end
     object btnExcluir: TBitBtn
       AlignWithMargins = True
@@ -434,7 +435,7 @@ object ProdutosBuscarView: TProdutosBuscarView
       Left = 918
       Top = 1
       Width = 36
-      Height = 15
+      Height = 19
       Margins.Left = 0
       Margins.Top = 0
       Margins.Right = 10
@@ -442,13 +443,14 @@ object ProdutosBuscarView: TProdutosBuscarView
       Align = alRight
       Caption = '000000'
       Layout = tlCenter
+      ExplicitHeight = 15
     end
     object Label2: TLabel
       AlignWithMargins = True
       Left = 800
       Top = 1
       Width = 118
-      Height = 15
+      Height = 19
       Margins.Left = 0
       Margins.Top = 0
       Margins.Right = 0
@@ -456,6 +458,7 @@ object ProdutosBuscarView: TProdutosBuscarView
       Align = alRight
       Caption = 'Registros localizados:  '
       Layout = tlCenter
+      ExplicitHeight = 15
     end
   end
   object pnGrid: TPanel

@@ -23,7 +23,7 @@ object ClientFMXMainView: TClientFMXMainView
     TabOrder = 3
     Text = 'Produtos'
     TextSettings.Trimming = None
-    TintColor = claDarkseagreen
+    TintColor = claRoyalblue
     OnClick = Button1Click
   end
 end
