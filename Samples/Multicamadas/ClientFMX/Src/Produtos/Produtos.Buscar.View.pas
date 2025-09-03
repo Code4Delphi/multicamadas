@@ -37,7 +37,7 @@ type
     retHeader: TRectangle;
     btnVoltar: TButton;
     imgVoltar: TPath;
-    btnBuscar: TButton;
+    btnListar: TButton;
     imgBuscar: TPath;
     edtBuscar: TEdit;
     ShadowEffect: TShadowEffect;
@@ -55,7 +55,7 @@ type
     imgAlterar: TPath;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnVoltarClick(Sender: TObject);
-    procedure btnBuscarClick(Sender: TObject);
+    procedure btnListarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure ListBox1Click(Sender: TObject);
@@ -99,7 +99,7 @@ begin
   Self.Close;
 end;
 
-procedure TProdutosBuscarView.btnBuscarClick(Sender: TObject);
+procedure TProdutosBuscarView.btnListarClick(Sender: TObject);
 begin
   Self.ListarDados;
 end;

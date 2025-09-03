@@ -142,7 +142,7 @@ object ProdutosBuscarView: TProdutosBuscarView
           WrapMode = Fit
         end
       end
-      object btnBuscar: TButton
+      object btnListar: TButton
         Align = Right
         Margins.Left = 3.000000000000000000
         Margins.Top = 1.000000000000000000
@@ -155,7 +155,7 @@ object ProdutosBuscarView: TProdutosBuscarView
         StyleLookup = 'TransparentRoundButton'
         TabOrder = 3
         TextSettings.Trimming = None
-        OnClick = btnBuscarClick
+        OnClick = btnListarClick
         object imgBuscar: TPath
           Align = Center
           Data.Path = {
