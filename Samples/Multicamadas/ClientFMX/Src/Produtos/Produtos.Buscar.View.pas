@@ -34,11 +34,11 @@ type
     retContent: TRectangle;
     lytSemRegistros: TLayout;
     imgSemRegistro: TPath;
-    retHeader: TRectangle;
+    retTopo: TRectangle;
     btnVoltar: TButton;
     imgVoltar: TPath;
     btnListar: TButton;
-    imgBuscar: TPath;
+    imgListar: TPath;
     edtBuscar: TEdit;
     ShadowEffect: TShadowEffect;
     retFooter: TRectangle;
@@ -58,7 +58,6 @@ type
     procedure btnListarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
-    procedure ListBox1Click(Sender: TObject);
     procedure btnNovoClick(Sender: TObject);
     procedure btnAlterarClick(Sender: TObject);
   private
@@ -126,22 +125,21 @@ begin
   Self.ScreenProdutos;
 end;
 
-procedure TProdutosBuscarView.ListBox1Click(Sender: TObject);
-begin
-   if Assigned(ListBox1.Selected) then
-    ShowMessage('Texto: ' + ListBox1.Selected.Text + ' | ID: ' + TProduto(ListBox1.Selected.Data).Nome);
-end;
-
 procedure TProdutosBuscarView.ScreenProdutos;
 begin
   for var LProdutos in FList do
-    ListBox1.Items.AddObject(Format('%D - %S', [LProdutos.Id, LProdutos.Nome]), LProdutos);
+    ListBox1.Items.AddObject(Format('%d - %s | R$ %n', [LProdutos.Id, LProdutos.Nome, LProdutos.Preco]), LProdutos);
 end;
 
 procedure TProdutosBuscarView.btnNovoClick(Sender: TObject);
 begin
   var LView := TProdutosCadastrarView2.Create(nil);
-  LView.Show;
+  LView.ShowModal(
+    procedure(ModalResult: TModalResult)
+    begin
+      Self.ListarDados;
+      ListBox1.ItemIndex := Pred(ListBox1.Count);
+    end);
 end;
 
 procedure TProdutosBuscarView.btnAlterarClick(Sender: TObject);
@@ -151,7 +149,11 @@ begin
 
   var LView := TProdutosCadastrarView2.Create(nil);
   LView.IdAlterar := TProduto(ListBox1.Selected.Data).Id;
-  LView.Show;
+  LView.ShowModal(
+    procedure(ModalResult: TModalResult)
+    begin
+      Self.ListarDados;
+    end);
 end;
 
 end.

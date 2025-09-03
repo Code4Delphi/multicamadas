@@ -30,7 +30,6 @@ object ProdutosBuscarView: TProdutosBuscarView
         Size.Height = 402.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
-        OnClick = ListBox1Click
         DisableFocusEffect = True
         DefaultItemStyles.ItemStyle = ''
         DefaultItemStyles.GroupHeaderStyle = ''
@@ -104,7 +103,7 @@ object ProdutosBuscarView: TProdutosBuscarView
         end
       end
     end
-    object retHeader: TRectangle
+    object retTopo: TRectangle
       Align = Top
       Fill.Color = claWhite
       Size.Width = 350.000000000000000000
@@ -156,7 +155,7 @@ object ProdutosBuscarView: TProdutosBuscarView
         TabOrder = 3
         TextSettings.Trimming = None
         OnClick = btnListarClick
-        object imgBuscar: TPath
+        object imgListar: TPath
           Align = Center
           Data.Path = {
             2500000000000000000018410000404002000000087051410000404002000000
