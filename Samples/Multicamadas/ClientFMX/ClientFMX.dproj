@@ -239,8 +239,8 @@
         </DCCReference>
         <DCCReference Include="..\..\Common\Produtos.DTO.pas"/>
         <DCCReference Include="..\..\Common\ProdutosService.pas"/>
-        <DCCReference Include="Src\Produtos\Produtos.Cadastrar.View2.pas">
-            <Form>ProdutosCadastrarView2</Form>
+        <DCCReference Include="Src\Produtos\Produtos.Cadastrar.View.pas">
+            <Form>ProdutosCadastrarView</Form>
             <FormType>fmx</FormType>
         </DCCReference>
         <DCCReference Include="Src\ClientFMX.Consts.pas"/>

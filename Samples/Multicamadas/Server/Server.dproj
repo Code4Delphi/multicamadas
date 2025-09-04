@@ -131,8 +131,8 @@
             <Form>ServerMainView</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="Src\XData.DM.pas">
-            <Form>XDataDM</Form>
+        <DCCReference Include="Src\Server.XData.DM.pas">
+            <Form>ServerXDataDM</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>

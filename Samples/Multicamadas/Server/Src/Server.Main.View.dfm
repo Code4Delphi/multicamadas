@@ -39,4 +39,13 @@ object ServerMainView: TServerMainView
     Height = 261
     TabOrder = 2
   end
+  object btnSwaggerDocumentacao: TButton
+    Left = 328
+    Top = 41
+    Width = 193
+    Height = 25
+    Caption = 'Abrir documenta'#231#227'o Swagger'
+    TabOrder = 3
+    OnClick = btnSwaggerDocumentacaoClick
+  end
 end

@@ -3,7 +3,7 @@ object ServerAuthXDataDM: TServerAuthXDataDM
   Width = 640
   object SparkleHttpSysDispatcher1: TSparkleHttpSysDispatcher
     Left = 136
-    Top = 80
+    Top = 64
   end
   object XDataServer1: TXDataServer
     BaseUrl = 'http://+:2001/tms/auth'
@@ -12,7 +12,7 @@ object ServerAuthXDataDM: TServerAuthXDataDM
     SwaggerOptions.Enabled = True
     SwaggerUIOptions.Enabled = True
     Left = 136
-    Top = 144
+    Top = 136
     object XDataServer1CORS: TSparkleCorsMiddleware
     end
     object XDataServer1Compress: TSparkleCompressMiddleware

@@ -7,7 +7,7 @@ uses
   Produtos.Buscar.View in 'Src\Produtos\Produtos.Buscar.View.pas' {ProdutosBuscarView},
   Produtos.DTO in '..\..\Common\Produtos.DTO.pas',
   ProdutosService in '..\..\Common\ProdutosService.pas',
-  Produtos.Cadastrar.View2 in 'Src\Produtos\Produtos.Cadastrar.View2.pas' {ProdutosCadastrarView2},
+  Produtos.Cadastrar.View in 'Src\Produtos\Produtos.Cadastrar.View.pas' {ProdutosCadastrarView},
   ClientFMX.Consts in 'Src\ClientFMX.Consts.pas';
 
 {$R *.res}

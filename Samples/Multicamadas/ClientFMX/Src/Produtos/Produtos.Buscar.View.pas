@@ -26,7 +26,7 @@ uses
   XData.Client,
   Produtos.DTO,
   ProdutosService,
-  Produtos.Cadastrar.View2,
+  Produtos.Cadastrar.View,
   ClientFMX.Consts;
 
 type
@@ -135,7 +135,7 @@ end;
 
 procedure TProdutosBuscarView.btnNovoClick(Sender: TObject);
 begin
-  var LView := TProdutosCadastrarView2.Create(nil);
+  var LView := TProdutosCadastrarView.Create(nil);
   LView.ShowModal(
     procedure(ModalResult: TModalResult)
     begin
@@ -149,7 +149,7 @@ begin
   if not Assigned(ListBox1.Selected) then
     raise Exception.Create('Selecione um registro');
 
-  var LView := TProdutosCadastrarView2.Create(nil);
+  var LView := TProdutosCadastrarView.Create(nil);
   LView.IdAlterar := TProduto(ListBox1.Selected.Data).Id;
   LView.ShowModal(
     procedure(ModalResult: TModalResult)

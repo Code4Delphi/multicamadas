@@ -1,3 +1,0 @@
-JavaFile=C:\Program Files\Java\jdk-24\bin\java.exe
-ManifestMergerFile=c:\program files (x86)\embarcadero\studio\23.0\bin\Android\manifestmerger-31.2.1.jar
-CompressLibFiles=1
