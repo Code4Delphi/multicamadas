@@ -22,7 +22,7 @@ type
     function GetEstoque(id: Integer): Double;
     [HttpGet, Route('{id}')]
     function Get(Id: Integer): TProduto;
-    [HttpGet]
+    [HttpGet, Route('')]
     function List([FromQuery] Filtros: TProdutoFiltros): TList<TProduto>;
     [HttpPost, Route('')]
     function Post(Produto: TProduto): Integer;
