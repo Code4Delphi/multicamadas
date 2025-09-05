@@ -18,10 +18,10 @@ type
   TProdutosService = class(TInterfacedObject, IProdutosService)
   private
     FDm: TProdutosDM;
-    FList: TList<TProduto>;
+    FResultList: TResultList;
     function GetEstoque(id: Integer): Double;
     function Get(Id: Integer): TProduto;
-    function List([FromQuery] Filtros: TProdutoFiltros): TList<TProduto>;
+    function List([FromQuery] Filtros: TProdutoFiltros): TResultList;
     function Post(Produto: TProduto): Integer;
     procedure Update(Id: Integer; Produto: TProduto);
     procedure Delete(Id: Integer);
@@ -64,7 +64,7 @@ begin
   Result.Registro := FDm.QListarRegistro.AsInteger;
 end;
 
-function TProdutosService.List([FromQuery] Filtros: TProdutoFiltros): TList<TProduto>;
+function TProdutosService.List([FromQuery] Filtros: TProdutoFiltros): TResultList;
 var
   LProduto: TProduto;
 begin
@@ -94,8 +94,18 @@ begin
   if FDm.QListar.IsEmpty then
     Exit(nil);
 
-  FreeAndNil(FList);
-  FList := TList<TProduto>.Create;
+  FreeAndNil(FResultList);
+  FResultList := TResultList.Create;
+  FResultList.RecordsTotal := FDm.QListar.RecordCount;
+
+  if (Filtros.Offset > 0) or (Filtros.Limit > 0) then
+  begin
+    FDm.QListar.Close;
+    FDm.QListar.SQL.Add('limit :offset, :limit');
+    FDm.QListar.ParamByName('offset').AsInteger := Filtros.Offset;
+    FDm.QListar.ParamByName('limit').AsInteger := Filtros.Limit;
+    FDm.QListar.Open;
+  end;
 
   FDm.QListar.First;
   while not FDm.QListar.Eof do
@@ -106,12 +116,13 @@ begin
     LProduto.Estoque := FDm.QListarestoque.AsFloat;
     LProduto.Preco := FDm.QListarpreco.AsFloat;
     LProduto.Registro := FDm.QListarRegistro.AsInteger;
-    FList.Add(LProduto);
+
+    FResultList.ListProdutos.Add(LProduto);
 
     FDm.QListar.Next;
   end;
 
-  Result := FList;
+  Result := FResultList;
 end;
 
 function TProdutosService.Post(Produto: TProduto): Integer;

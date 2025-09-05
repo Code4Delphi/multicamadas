@@ -65,7 +65,8 @@ type
     procedure Dataset1ObjectRemove(Dataset: TDataSet; AObject: TObject);
   private
     FXDataClient: TXDataClient;
-    FList: TList<TProduto>;
+    FResultList: TResultList;
+    FRecordsTotal: Integer;
     procedure ListarDados;
     procedure ChamarTelaCadastrar(const AId: Integer = 0);
   public
@@ -83,14 +84,12 @@ procedure TProdutosBuscarView.FormCreate(Sender: TObject);
 begin
   FXDataClient := TXDataClient.Create;
   FXDataClient.Uri := 'http://localhost:8000/tms/xdata/';
-
-  FList := TList<TProduto>.Create;
+  FRecordsTotal := 0;
 end;
 
 procedure TProdutosBuscarView.FormDestroy(Sender: TObject);
 begin
   Dataset1.Close;
-  FList.Free;
   FXDataClient.Free;
 end;
 
@@ -139,7 +138,6 @@ begin
   try
     Dataset1.Close;
     LProdutosService := FXDataClient.Service<IProdutosService>;
-    FreeAndNil(FList);
 
     LFiltros := TProdutoFiltros.Create;
     try
@@ -149,12 +147,14 @@ begin
         2: LFiltros.Registro := StrToIntDef(edtBuscar.Text, 0);
       end;
 
-      FList := LProdutosService.List(LFiltros);
+      FResultList := LProdutosService.List(LFiltros);
     finally
       LFiltros.Free;
     end;
 
-    Dataset1.SetSourceList(FList);
+    FRecordsTotal := FResultList.RecordsTotal;
+
+    Dataset1.SetSourceList(FResultList.ListProdutos);
     Dataset1.Open;
     Dataset1.Last;
 

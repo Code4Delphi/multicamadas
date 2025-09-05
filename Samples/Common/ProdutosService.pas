@@ -13,6 +13,19 @@ type
     Id: Integer;
     Nome: string;
     Registro: Integer;
+    Offset: Integer;
+    Limit: Integer;
+  end;
+
+  TResultList = class
+  private
+    FRecordsTotal: Integer;
+    FListProdutos: TList<TProduto>;
+  public
+    property RecordsTotal: Integer read FRecordsTotal write FRecordsTotal;
+    property ListProdutos: TList<TProduto> read FListProdutos write FListProdutos;
+    constructor Create;
+    destructor Destroy; override;
   end;
 
   [ServiceContract]
@@ -23,7 +36,7 @@ type
     [HttpGet, Route('{id}')]
     function Get(Id: Integer): TProduto;
     [HttpGet, Route('')]
-    function List([FromQuery] Filtros: TProdutoFiltros): TList<TProduto>;
+    function List([FromQuery] Filtros: TProdutoFiltros): TResultList;
     [HttpPost, Route('')]
     function Post(Produto: TProduto): Integer;
     [HttpPut, Route('{id}')]
@@ -33,6 +46,19 @@ type
   end;
 
 implementation
+
+{ TResultList }
+
+constructor TResultList.Create;
+begin
+  FListProdutos := TList<TProduto>.Create;
+end;
+
+destructor TResultList.Destroy;
+begin
+   FListProdutos.Free;
+  inherited;
+end;
 
 initialization
   RegisterServiceType(TypeInfo(IProdutosService));

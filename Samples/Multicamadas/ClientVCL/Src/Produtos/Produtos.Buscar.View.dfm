@@ -352,7 +352,6 @@ object ProdutosBuscarView: TProdutosBuscarView
         8176B88285FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
       TabOrder = 4
       OnClick = btnAtualizarClick
-      ExplicitTop = 6
     end
     object btnExcluir: TBitBtn
       AlignWithMargins = True
