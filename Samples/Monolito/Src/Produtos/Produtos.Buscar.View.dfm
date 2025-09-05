@@ -2,8 +2,8 @@ object ProdutosBuscarView: TProdutosBuscarView
   Left = 0
   Top = 0
   Caption = 'Produtos Buscar'
-  ClientHeight = 636
-  ClientWidth = 965
+  ClientHeight = 641
+  ClientWidth = 964
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -19,15 +19,16 @@ object ProdutosBuscarView: TProdutosBuscarView
   object pnTopo: TPanel
     Left = 0
     Top = 0
-    Width = 965
+    Width = 964
     Height = 73
     Align = alTop
     BevelEdges = [beLeft, beTop, beRight]
     BevelKind = bkTile
     BevelOuter = bvNone
     TabOrder = 0
+    ExplicitWidth = 965
     DesignSize = (
-      961
+      960
       71)
     object Label1: TLabel
       Left = 24
@@ -39,20 +40,23 @@ object ProdutosBuscarView: TProdutosBuscarView
     object edtBuscar: TEdit
       Left = 24
       Top = 32
-      Width = 903
+      Width = 902
       Height = 23
       Anchors = [akLeft, akTop, akRight]
       TabOrder = 0
       OnChange = edtBuscarChange
+      ExplicitWidth = 903
     end
   end
   object pnRodape: TPanel
     Left = 0
-    Top = 586
-    Width = 965
+    Top = 591
+    Width = 964
     Height = 50
     Align = alBottom
     TabOrder = 1
+    ExplicitTop = 586
+    ExplicitWidth = 965
     object rdGroupFiltros: TRadioGroup
       AlignWithMargins = True
       Left = 1
@@ -75,7 +79,7 @@ object ProdutosBuscarView: TProdutosBuscarView
     end
     object btnCadastrar: TBitBtn
       AlignWithMargins = True
-      Left = 441
+      Left = 440
       Top = 8
       Width = 100
       Height = 34
@@ -144,10 +148,11 @@ object ProdutosBuscarView: TProdutosBuscarView
         00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
       TabOrder = 1
       OnClick = btnCadastrarClick
+      ExplicitLeft = 441
     end
     object btnFechar: TBitBtn
       AlignWithMargins = True
-      Left = 863
+      Left = 862
       Top = 8
       Width = 100
       Height = 34
@@ -212,10 +217,11 @@ object ProdutosBuscarView: TProdutosBuscarView
         0000000000000000000000000000000000000000000000000000}
       TabOrder = 5
       OnClick = btnFecharClick
+      ExplicitLeft = 863
     end
     object btnAlterar: TBitBtn
       AlignWithMargins = True
-      Left = 542
+      Left = 541
       Top = 8
       Width = 100
       Height = 34
@@ -280,10 +286,11 @@ object ProdutosBuscarView: TProdutosBuscarView
         FA040404040404040404040404040404040404040404F8FC0404}
       TabOrder = 2
       OnClick = btnAlterarClick
+      ExplicitLeft = 542
     end
     object btnExcluir: TBitBtn
       AlignWithMargins = True
-      Left = 643
+      Left = 642
       Top = 8
       Width = 100
       Height = 34
@@ -348,10 +355,11 @@ object ProdutosBuscarView: TProdutosBuscarView
         0000000000000000000000000000000000000000000000000000}
       TabOrder = 3
       OnClick = btnExcluirClick
+      ExplicitLeft = 643
     end
     object btnAtualizar: TBitBtn
       AlignWithMargins = True
-      Left = 744
+      Left = 743
       Top = 8
       Width = 118
       Height = 34
@@ -420,18 +428,21 @@ object ProdutosBuscarView: TProdutosBuscarView
         8176B88285FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
       TabOrder = 4
       OnClick = btnAtualizarClick
+      ExplicitLeft = 744
     end
   end
   object pnTotal: TPanel
     Left = 0
-    Top = 565
-    Width = 965
+    Top = 570
+    Width = 964
     Height = 21
     Align = alBottom
     TabOrder = 2
+    ExplicitTop = 565
+    ExplicitWidth = 965
     object lbTotal: TLabel
       AlignWithMargins = True
-      Left = 918
+      Left = 917
       Top = 1
       Width = 36
       Height = 19
@@ -442,11 +453,12 @@ object ProdutosBuscarView: TProdutosBuscarView
       Align = alRight
       Caption = '000000'
       Layout = tlCenter
+      ExplicitLeft = 918
       ExplicitHeight = 15
     end
     object Label2: TLabel
       AlignWithMargins = True
-      Left = 800
+      Left = 799
       Top = 1
       Width = 118
       Height = 19
@@ -457,22 +469,25 @@ object ProdutosBuscarView: TProdutosBuscarView
       Align = alRight
       Caption = 'Registros localizados:  '
       Layout = tlCenter
+      ExplicitLeft = 800
       ExplicitHeight = 15
     end
   end
   object pnGrid: TPanel
     Left = 0
     Top = 73
-    Width = 965
-    Height = 492
+    Width = 964
+    Height = 497
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 3
+    ExplicitWidth = 965
+    ExplicitHeight = 492
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0
-      Width = 965
-      Height = 492
+      Width = 964
+      Height = 497
       Align = alClient
       DataSource = DataSource1
       Font.Charset = DEFAULT_CHARSET
@@ -488,6 +503,7 @@ object ProdutosBuscarView: TProdutosBuscarView
       TitleFont.Height = -11
       TitleFont.Name = 'Tahoma'
       TitleFont.Style = [fsBold]
+      OnDrawColumnCell = DBGrid1DrawColumnCell
       OnDblClick = DBGrid1DblClick
       OnKeyDown = DBGrid1KeyDown
       Columns = <

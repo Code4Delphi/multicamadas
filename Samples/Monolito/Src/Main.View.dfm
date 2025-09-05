@@ -2,8 +2,8 @@ object MainView: TMainView
   Left = 0
   Top = 0
   Caption = 'Monolito- Code4Delphi'
-  ClientHeight = 512
-  ClientWidth = 710
+  ClientHeight = 621
+  ClientWidth = 964
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -13,7 +13,6 @@ object MainView: TMainView
   KeyPreview = True
   Menu = MainMenu1
   Position = poScreenCenter
-  WindowState = wsMaximized
   OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   TextHeight = 15
