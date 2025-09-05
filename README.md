@@ -4,7 +4,8 @@ Aplicação de exemplo de como transformar uma aplicação de arquitetura monol�
 
 ## Samples
 **Aplicação monolítica que será refatorada:** 
-- [Aplicação monolítica](Samples/Monolito)
+| [Aplicação monolítica](Samples/Monolito) |
+|---|
 
 <br/>
 
