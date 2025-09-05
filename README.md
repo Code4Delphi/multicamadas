@@ -3,10 +3,10 @@ Aplicação de exemplo de como transformar uma aplicação de arquitetura monol�
 
 
 ## Componentes utilizados
-| Nome       | Download instalação | Demonstração | Descrição |
-|------------|---------------------|--------------|-----------|
-|**XData**   | [Download](https://www.tmssoftware.com/site/xdata.asp) | [Demonstração](https://www.youtube.com/watch?v=cwb6_SKbB6A&list=PLLHSz4dOnnN2Xlf7OX47cF20gbmz9-9z0) | TMS XData é um Framework Delphi para desenvolvimento de servidores de API REST/JSON  |
-
+| Nome             | Download instalação | Demonstração | Descrição |
+|------------------|---------------------|--------------|-----------|
+| **XData**        | [Download](https://www.tmssoftware.com/site/xdata.asp) | [Demonstração](https://www.youtube.com/watch?v=cwb6_SKbB6A&list=PLLHSz4dOnnN2Xlf7OX47cF20gbmz9-9z0) | TMS XData é um Framework Delphi para desenvolvimento de servidores de API REST/JSON |
+| **TMS Web Core** | [Download](https://www.tmssoftware.com/site/tmswebcore.asp) | [Demonstração](https://www.youtube.com/watch?v=n51xdFBRzX0&list=PLLHSz4dOnnN2Xlf7OX47cF20gbmz9-9z0) | Framework para criação de aplicações web modernas em Delphi |
 
 
 ## 🔶 Samples
