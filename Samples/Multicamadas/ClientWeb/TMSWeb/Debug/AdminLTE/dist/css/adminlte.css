@@ -15395,6 +15395,13 @@ html.maximized-card {
 
 .btn-igual {
   flex: 1;
-  min-width: 150px;
+  min-width: 100px;
 }
+
+.btn-paginacao {
+  flex: 1;
+  width: 45px;
+  max-width: 45px;
+}
+
 /*# sourceMappingURL=adminlte.css.map */
