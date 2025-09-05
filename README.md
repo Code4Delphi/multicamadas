@@ -4,7 +4,7 @@ Aplicação de exemplo de como transformar uma aplicação de arquitetura monol�
 
 ## Samples
 **Aplicação monolítica que será refatorada:** 
-- [Aplicação monolítica](https://github.com/Code4Delphi/multicamadas/tree/master/Samples/Monolito)
+- [Aplicação monolítica](Samples/Monolito)
 
 <br/>
 
@@ -15,5 +15,5 @@ Back-end:
 |---|---|
 
 Front-end:
-| [ClientVCL](https://github.com/Code4Delphi/multicamadas/tree/master/Samples/Multicamadas/ClientVCL) | [ClientFMX](https://github.com/Code4Delphi/multicamadas/tree/master/Samples/Multicamadas/ClientFMX) | [ClientWeb](https://github.com/Code4Delphi/multicamadas/tree/master/Samples/Multicamadas/ClientWeb) |
+| [ClientVCL](Samples/Multicamadas/ClientVCL) | [ClientFMX](Samples/Multicamadas/ClientFMX) | [ClientWeb](Samples/Multicamadas/ClientWeb) |
 |---|---|---|
