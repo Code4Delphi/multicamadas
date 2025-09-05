@@ -76,7 +76,7 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
         <DCC_DcuOutput>DCUs\$(Platform)\$(Config)</DCC_DcuOutput>
-        <DCC_ExeOutput>Bin</DCC_ExeOutput>
+        <DCC_ExeOutput>Bin\$(Platform)\$(Config)</DCC_ExeOutput>
         <DCC_E>false</DCC_E>
         <DCC_N>false</DCC_N>
         <DCC_S>false</DCC_S>
@@ -443,7 +443,74 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="Bin\AndroidManifest.xml" Configuration="Debug" Class="ProjectAndroidManifest">
+                <DeployFile LocalName="Bin\Android64\Debug\AndroidManifest.xml" Configuration="Debug" Class="ProjectAndroidManifest">
+                    <Platform Name="Android64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Bin\Android64\Debug\colors-night-v21.xml" Configuration="Debug" Class="Android_ColorsDark">
+                    <Platform Name="Android64">
+                        <RemoteName>colors.xml</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Bin\Android64\Debug\colors.xml" Configuration="Debug" Class="Android_Colors">
+                    <Platform Name="Android64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Bin\Android64\Debug\ic_launcher-v33.xml" Configuration="Debug" Class="Android_AdaptiveIconV33">
+                    <Platform Name="Android64">
+                        <RemoteName>ic_launcher.xml</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Bin\Android64\Debug\ic_launcher.xml" Configuration="Debug" Class="Android_AdaptiveIcon">
+                    <Platform Name="Android64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Bin\Android64\Debug\libClientFMX.so" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Android64">
+                        <RemoteName>libClientFMX.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Bin\Android64\Debug\splash_image_def-v21.xml" Configuration="Debug" Class="AndroidSplashImageDefV21">
+                    <Platform Name="Android64">
+                        <RemoteName>splash_image_def.xml</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Bin\Android64\Debug\splash_image_def.xml" Configuration="Debug" Class="AndroidSplashImageDef">
+                    <Platform Name="Android64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Bin\Android64\Debug\strings.xml" Configuration="Debug" Class="Android_Strings">
+                    <Platform Name="Android64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Bin\Android64\Debug\styles-v21.xml" Configuration="Debug" Class="AndroidSplashStylesV21">
+                    <Platform Name="Android64">
+                        <RemoteName>styles.xml</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Bin\Android64\Debug\styles-v31.xml" Configuration="Debug" Class="AndroidSplashStylesV31">
+                    <Platform Name="Android64">
+                        <RemoteName>styles.xml</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Bin\Android64\Debug\styles-v35.xml" Configuration="Debug" Class="AndroidSplashStylesV35">
+                    <Platform Name="Android64">
+                        <RemoteName>styles.xml</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Bin\Android64\Debug\styles.xml" Configuration="Debug" Class="AndroidSplashStyles">
                     <Platform Name="Android64">
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -451,73 +518,6 @@
                 <DeployFile LocalName="Bin\ClientFMX.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>ClientFMX.exe</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="Bin\colors-night-v21.xml" Configuration="Debug" Class="Android_ColorsDark">
-                    <Platform Name="Android64">
-                        <RemoteName>colors.xml</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="Bin\colors.xml" Configuration="Debug" Class="Android_Colors">
-                    <Platform Name="Android64">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="Bin\ic_launcher-v33.xml" Configuration="Debug" Class="Android_AdaptiveIconV33">
-                    <Platform Name="Android64">
-                        <RemoteName>ic_launcher.xml</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="Bin\ic_launcher.xml" Configuration="Debug" Class="Android_AdaptiveIcon">
-                    <Platform Name="Android64">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="Bin\libClientFMX.so" Configuration="Debug" Class="ProjectOutput">
-                    <Platform Name="Android64">
-                        <RemoteName>libClientFMX.so</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="Bin\splash_image_def-v21.xml" Configuration="Debug" Class="AndroidSplashImageDefV21">
-                    <Platform Name="Android64">
-                        <RemoteName>splash_image_def.xml</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="Bin\splash_image_def.xml" Configuration="Debug" Class="AndroidSplashImageDef">
-                    <Platform Name="Android64">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="Bin\strings.xml" Configuration="Debug" Class="Android_Strings">
-                    <Platform Name="Android64">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="Bin\styles-v21.xml" Configuration="Debug" Class="AndroidSplashStylesV21">
-                    <Platform Name="Android64">
-                        <RemoteName>styles.xml</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="Bin\styles-v31.xml" Configuration="Debug" Class="AndroidSplashStylesV31">
-                    <Platform Name="Android64">
-                        <RemoteName>styles.xml</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="Bin\styles-v35.xml" Configuration="Debug" Class="AndroidSplashStylesV35">
-                    <Platform Name="Android64">
-                        <RemoteName>styles.xml</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="Bin\styles.xml" Configuration="Debug" Class="AndroidSplashStyles">
-                    <Platform Name="Android64">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

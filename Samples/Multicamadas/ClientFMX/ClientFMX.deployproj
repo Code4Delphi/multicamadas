@@ -5,7 +5,7 @@
     </ProjectExtensions>
     <PropertyGroup>
         <DeviceId Condition="'$(Platform)'=='Android'"/>
-        <DeviceId Condition="'$(Platform)'=='Android64'"/>
+        <DeviceId Condition="'$(Platform)'=='Android64'">RXCWA07V6VF</DeviceId>
     </PropertyGroup>
     <ItemGroup Condition="'$(Platform)'=='Win32'">
         <DeployFile Include="Bin\ClientFMX.exe" Condition="'$(Config)'=='Debug'">
@@ -74,7 +74,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="Bin\styles-v35.xml" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="Bin\Android64\Debug\styles-v35.xml" Condition="'$(Config)'=='Debug'">
             <RemoteDir>ClientFMX\res\values-v35\</RemoteDir>
             <RemoteName>styles.xml</RemoteName>
             <DeployClass>AndroidSplashStylesV35</DeployClass>
@@ -110,7 +110,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="Bin\colors.xml" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="Bin\Android64\Debug\colors.xml" Condition="'$(Config)'=='Debug'">
             <RemoteDir>ClientFMX\res\values\</RemoteDir>
             <RemoteName>colors.xml</RemoteName>
             <DeployClass>Android_Colors</DeployClass>
@@ -128,7 +128,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="Bin\splash_image_def.xml" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="Bin\Android64\Debug\splash_image_def.xml" Condition="'$(Config)'=='Debug'">
             <RemoteDir>ClientFMX\res\drawable\</RemoteDir>
             <RemoteName>splash_image_def.xml</RemoteName>
             <DeployClass>AndroidSplashImageDef</DeployClass>
@@ -155,7 +155,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="Bin\styles-v31.xml" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="Bin\Android64\Debug\styles-v31.xml" Condition="'$(Config)'=='Debug'">
             <RemoteDir>ClientFMX\res\values-v31\</RemoteDir>
             <RemoteName>styles.xml</RemoteName>
             <DeployClass>AndroidSplashStylesV31</DeployClass>
@@ -182,7 +182,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="Bin\styles-v21.xml" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="Bin\Android64\Debug\styles-v21.xml" Condition="'$(Config)'=='Debug'">
             <RemoteDir>ClientFMX\res\values-v21\</RemoteDir>
             <RemoteName>styles.xml</RemoteName>
             <DeployClass>AndroidSplashStylesV21</DeployClass>
@@ -191,7 +191,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="Bin\styles.xml" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="Bin\Android64\Debug\styles.xml" Condition="'$(Config)'=='Debug'">
             <RemoteDir>ClientFMX\res\values\</RemoteDir>
             <RemoteName>styles.xml</RemoteName>
             <DeployClass>AndroidSplashStyles</DeployClass>
@@ -218,7 +218,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="Bin\colors-night-v21.xml" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="Bin\Android64\Debug\colors-night-v21.xml" Condition="'$(Config)'=='Debug'">
             <RemoteDir>ClientFMX\res\values-night-v21\</RemoteDir>
             <RemoteName>colors.xml</RemoteName>
             <DeployClass>Android_ColorsDark</DeployClass>
@@ -263,7 +263,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="Bin\strings.xml" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="Bin\Android64\Debug\strings.xml" Condition="'$(Config)'=='Debug'">
             <RemoteDir>ClientFMX\res\values\</RemoteDir>
             <RemoteName>strings.xml</RemoteName>
             <DeployClass>Android_Strings</DeployClass>
@@ -272,7 +272,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="Bin\ic_launcher-v33.xml" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="Bin\Android64\Debug\ic_launcher-v33.xml" Condition="'$(Config)'=='Debug'">
             <RemoteDir>ClientFMX\res\drawable-anydpi-v33\</RemoteDir>
             <RemoteName>ic_launcher.xml</RemoteName>
             <DeployClass>Android_AdaptiveIconV33</DeployClass>
@@ -281,7 +281,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="Bin\AndroidManifest.xml" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="Bin\Android64\Debug\AndroidManifest.xml" Condition="'$(Config)'=='Debug'">
             <RemoteDir>ClientFMX\</RemoteDir>
             <RemoteName>AndroidManifest.xml</RemoteName>
             <DeployClass>ProjectAndroidManifest</DeployClass>
@@ -308,7 +308,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="Bin\ic_launcher.xml" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="Bin\Android64\Debug\ic_launcher.xml" Condition="'$(Config)'=='Debug'">
             <RemoteDir>ClientFMX\res\drawable-anydpi-v26\</RemoteDir>
             <RemoteName>ic_launcher.xml</RemoteName>
             <DeployClass>Android_AdaptiveIcon</DeployClass>
@@ -353,7 +353,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="Bin\libClientFMX.so" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="Bin\Android64\Debug\libClientFMX.so" Condition="'$(Config)'=='Debug'">
             <RemoteDir>ClientFMX\library\lib\arm64-v8a\</RemoteDir>
             <RemoteName>libClientFMX.so</RemoteName>
             <DeployClass>ProjectOutput</DeployClass>
@@ -363,7 +363,7 @@
             <Overwrite>True</Overwrite>
             <Required>True</Required>
         </DeployFile>
-        <DeployFile Include="Bin\splash_image_def-v21.xml" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="Bin\Android64\Debug\splash_image_def-v21.xml" Condition="'$(Config)'=='Debug'">
             <RemoteDir>ClientFMX\res\drawable-anydpi-v21\</RemoteDir>
             <RemoteName>splash_image_def.xml</RemoteName>
             <DeployClass>AndroidSplashImageDefV21</DeployClass>
