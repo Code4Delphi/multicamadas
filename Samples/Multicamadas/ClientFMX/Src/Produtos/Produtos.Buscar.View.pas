@@ -9,6 +9,7 @@ uses
   System.Classes,
   System.Variants,
   System.Generics.Collections,
+  System.Math,
   FMX.Types,
   FMX.Controls,
   FMX.Forms,
@@ -51,8 +52,12 @@ type
     imgAlterar: TPath;
     btnExcluir: TButton;
     imgExcluir: TPath;
-    lbTotal: TLabel;
-    Label1: TLabel;
+    retPaginacao: TRectangle;
+    btnAnterior: TButton;
+    imgAnterior: TPath;
+    btnProximo: TButton;
+    imgProximo: TPath;
+    lbPaginacao: TLabel;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnVoltarClick(Sender: TObject);
     procedure btnListarClick(Sender: TObject);
@@ -61,11 +66,17 @@ type
     procedure btnNovoClick(Sender: TObject);
     procedure btnAlterarClick(Sender: TObject);
     procedure btnExcluirClick(Sender: TObject);
+    procedure btnAnteriorClick(Sender: TObject);
+    procedure btnProximoClick(Sender: TObject);
   private
     FXDataClient: TXDataClient;
-    FList: TList<TProduto>;
+    FResultList: TResultList;
+    FPageIndex: Integer;
+    FPageSize: Integer;
+    FPageTotal: Integer;
     procedure ListarDados;
     procedure ScreenProdutos;
+    procedure ProcessaPaginacao;
   public
 
   end;
@@ -80,12 +91,12 @@ begin
   FXDataClient := TXDataClient.Create;
   FXDataClient.Uri := C_URI;
 
-  FList := TList<TProduto>.Create;
+  FPageSize := 20;
+  FPageIndex := 1;
 end;
 
 procedure TProdutosBuscarView.FormDestroy(Sender: TObject);
 begin
-  FList.Free;
   FXDataClient.Free;
 end;
 
@@ -97,40 +108,6 @@ end;
 procedure TProdutosBuscarView.btnVoltarClick(Sender: TObject);
 begin
   Self.Close;
-end;
-
-procedure TProdutosBuscarView.btnListarClick(Sender: TObject);
-begin
-  Self.ListarDados;
-end;
-
-procedure TProdutosBuscarView.ListarDados;
-var
-  LProdutosService: IProdutosService;
-  LFiltros: TProdutoFiltros;
-begin
-  ListBox1.Clear;
-  lbTotal.Text := '0';
-  LProdutosService := FXDataClient.Service<IProdutosService>;
-  FreeAndNil(FList);
-
-  LFiltros := TProdutoFiltros.Create;
-  try
-    LFiltros.Nome := edtBuscar.Text;
-    FList := LProdutosService.List(LFiltros);
-  finally
-    LFiltros.Free;
-  end;
-
-  lytSemRegistros.Visible := FList.Count <= 0;
-  lbTotal.Text := FList.Count.ToString;
-  Self.ScreenProdutos;
-end;
-
-procedure TProdutosBuscarView.ScreenProdutos;
-begin
-  for var LProdutos in FList do
-    ListBox1.Items.AddObject(Format('%d - %s | R$ %n', [LProdutos.Id, LProdutos.Nome, LProdutos.Preco]), LProdutos);
 end;
 
 procedure TProdutosBuscarView.btnNovoClick(Sender: TObject);
@@ -172,6 +149,72 @@ begin
          Self.ListarDados;
       end;
     end);
+end;
+
+procedure TProdutosBuscarView.btnAnteriorClick(Sender: TObject);
+begin
+  if FPageIndex > 1 then
+  begin
+    Dec(FPageIndex);
+    Self.ListarDados;
+  end;
+end;
+
+procedure TProdutosBuscarView.btnProximoClick(Sender: TObject);
+begin
+  if FPageIndex < FPageTotal then
+  begin
+    Inc(FPageIndex);
+    Self.ListarDados;
+  end;
+end;
+
+procedure TProdutosBuscarView.btnListarClick(Sender: TObject);
+begin
+  FPageIndex := 1;
+  Self.ListarDados;
+end;
+
+procedure TProdutosBuscarView.ListarDados;
+var
+  LProdutosService: IProdutosService;
+  LFiltros: TProdutoFiltros;
+begin
+  ListBox1.Clear;
+  LProdutosService := FXDataClient.Service<IProdutosService>;
+
+  LFiltros := TProdutoFiltros.Create;
+  try
+    LFiltros.Nome := edtBuscar.Text;
+    LFiltros.Offset := (FPageIndex - 1) * FPageSize;
+    LFiltros.Limit  := FPageSize;
+    FResultList := LProdutosService.List(LFiltros);
+  finally
+    LFiltros.Free;
+  end;
+
+  lytSemRegistros.Visible := FResultList.ListProdutos.Count <= 0;
+  Self.ScreenProdutos;
+  Self.ProcessaPaginacao;
+end;
+
+procedure TProdutosBuscarView.ScreenProdutos;
+begin
+  for var LProdutos in FResultList.ListProdutos do
+    ListBox1.Items.AddObject(Format('%d - %s | R$ %n', [LProdutos.Id, LProdutos.Nome, LProdutos.Preco]), LProdutos);
+end;
+
+procedure TProdutosBuscarView.ProcessaPaginacao;
+var
+  LRecordsTotal: Integer;
+begin
+  LRecordsTotal := FResultList.RecordsTotal;
+
+  FPageTotal := 1;
+  if FPageSize > 0 then
+    FPageTotal := Ceil(LRecordsTotal / FPageSize);
+
+  lbPaginacao.Text := Format('%d de %d', [FPageIndex, FPageTotal]);
 end;
 
 end.

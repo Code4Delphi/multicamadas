@@ -64,6 +64,8 @@ object ProdutosDM: TProdutosDM
   end
   object QListar: TFDQuery
     Connection = FDConnection1
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
     SQL.Strings = (
       'select * from produtos')
     Left = 224

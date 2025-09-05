@@ -2,7 +2,7 @@ object ProdutosCadastrarView: TProdutosCadastrarView
   Left = 0
   Top = 0
   ActiveControl = btnConfirmar
-  Caption = 'Form1'
+  Caption = 'Cadastro de produtos'
   ClientHeight = 500
   ClientWidth = 350
   FormFactor.Width = 320

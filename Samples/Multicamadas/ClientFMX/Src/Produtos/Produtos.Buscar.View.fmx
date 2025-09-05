@@ -1,7 +1,7 @@
 object ProdutosBuscarView: TProdutosBuscarView
   Left = 0
   Top = 0
-  Caption = 'Form2'
+  Caption = 'Consulta de produtos'
   ClientHeight = 500
   ClientWidth = 350
   FormFactor.Width = 320
@@ -21,13 +21,13 @@ object ProdutosBuscarView: TProdutosBuscarView
       Align = Client
       Fill.Color = claWhite
       Size.Width = 350.000000000000000000
-      Size.Height = 387.000000000000000000
+      Size.Height = 339.000000000000000000
       Size.PlatformDefault = False
       Stroke.Kind = None
       object ListBox1: TListBox
         Align = Client
         Size.Width = 350.000000000000000000
-        Size.Height = 387.000000000000000000
+        Size.Height = 339.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
         DisableFocusEffect = True
@@ -35,7 +35,7 @@ object ProdutosBuscarView: TProdutosBuscarView
         DefaultItemStyles.GroupHeaderStyle = ''
         DefaultItemStyles.GroupFooterStyle = ''
         Viewport.Width = 346.000000000000000000
-        Viewport.Height = 383.000000000000000000
+        Viewport.Height = 335.000000000000000000
       end
       object lytSemRegistros: TLayout
         Align = Center
@@ -187,7 +187,7 @@ object ProdutosBuscarView: TProdutosBuscarView
       Align = Bottom
       Fill.Color = claWhite
       Padding.Bottom = 2.000000000000000000
-      Position.Y = 448.000000000000000000
+      Position.Y = 400.000000000000000000
       Size.Width = 350.000000000000000000
       Size.Height = 52.000000000000000000
       Size.PlatformDefault = False
@@ -293,34 +293,88 @@ object ProdutosBuscarView: TProdutosBuscarView
           WrapMode = Fit
         end
       end
-      object lbTotal: TLabel
+    end
+    object retPaginacao: TRectangle
+      Align = Bottom
+      Fill.Color = claWhite
+      Position.Y = 452.000000000000000000
+      Size.Width = 350.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      object btnAnterior: TButton
         Align = Left
-        AutoSize = True
-        StyledSettings = [Style]
-        Position.X = 62.000000000000000000
-        Size.Width = 91.000000000000000000
-        Size.Height = 50.000000000000000000
+        Margins.Left = 3.000000000000000000
+        Margins.Top = 1.000000000000000000
+        Margins.Bottom = 1.000000000000000000
+        Position.X = 3.000000000000000000
+        Position.Y = 1.000000000000000000
+        Size.Width = 48.000000000000000000
+        Size.Height = 46.000000000000000000
         Size.PlatformDefault = False
-        TextSettings.Font.Family = 'Roboto'
-        TextSettings.Font.Size = 15.000000000000000000
-        TextSettings.FontColor = xFF5F5F60
-        Text = '0'
-        TabOrder = 5
+        StyleLookup = 'TransparentRoundButton'
+        TabOrder = 0
+        TextSettings.Trimming = None
+        OnClick = btnAnteriorClick
+        object imgAnterior: TPath
+          Align = Center
+          Data.Path = {
+            08000000000000005C8F7641D7A3844101000000AE472D410000404101000000
+            5C8F7641B81EED4001000000000060410000C040010000000000004100004041
+            010000000000604100009041010000005C8F7641D7A38441030000005C8F7641
+            D7A38441}
+          Fill.Color = claRoyalblue
+          HitTest = False
+          Size.Width = 24.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Kind = None
+          WrapMode = Fit
+        end
       end
-      object Label1: TLabel
-        Align = Left
+      object btnProximo: TButton
+        Align = Right
+        Margins.Left = 3.000000000000000000
+        Margins.Top = 1.000000000000000000
+        Margins.Bottom = 1.000000000000000000
+        Position.X = 302.000000000000000000
+        Position.Y = 1.000000000000000000
+        Size.Width = 48.000000000000000000
+        Size.Height = 46.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'TransparentRoundButton'
+        TabOrder = 1
+        TextSettings.Trimming = None
+        OnClick = btnProximoClick
+        object imgProximo: TPath
+          Align = Center
+          Data.Path = {
+            0800000000000000A4700941D7A384410100000052B852410000404101000000
+            A4700941B81EED4001000000000020410000C040010000000000804100004041
+            01000000000020410000904101000000A4700941D7A3844103000000A4700941
+            D7A38441}
+          Fill.Color = claRoyalblue
+          HitTest = False
+          Size.Width = 24.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Kind = None
+          WrapMode = Fit
+        end
+      end
+      object lbPaginacao: TLabel
+        Align = Center
         AutoSize = True
-        StyledSettings = [Style]
-        Margins.Right = 5.000000000000000000
-        Size.Width = 57.000000000000000000
-        Size.Height = 50.000000000000000000
+        StyledSettings = []
+        Size.Width = 248.000000000000000000
+        Size.Height = 22.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Family = 'Roboto'
-        TextSettings.Font.Size = 15.000000000000000000
+        TextSettings.Font.Size = 18.000000000000000000
         TextSettings.FontColor = xFF5F5F60
-        TextSettings.HorzAlign = Trailing
-        Text = 'Total: '
-        TabOrder = 4
+        TextSettings.HorzAlign = Center
+        Text = '0 de 0'
+        TabOrder = 2
       end
     end
   end

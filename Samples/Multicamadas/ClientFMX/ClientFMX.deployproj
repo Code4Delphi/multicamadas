@@ -4,7 +4,7 @@
         <ProjectFileVersion>12</ProjectFileVersion>
     </ProjectExtensions>
     <PropertyGroup>
-        <DeviceId Condition="'$(Platform)'=='Android'">RXCWA07V6VF</DeviceId>
+        <DeviceId Condition="'$(Platform)'=='Android'">b536e0e4d3599aab</DeviceId>
         <DeviceId Condition="'$(Platform)'=='Android64'">RXCWA07V6VF</DeviceId>
     </PropertyGroup>
     <ItemGroup Condition="'$(Platform)'=='Win32'">
