@@ -424,55 +424,134 @@ object ProdutosBuscarView: TProdutosBuscarView
   end
   object pnTotal: TPanel
     Left = 0
-    Top = 565
+    Top = 560
     Width = 965
-    Height = 21
+    Height = 26
     Align = alBottom
+    Padding.Left = 2
+    Padding.Top = 2
+    Padding.Bottom = 2
     TabOrder = 2
+    ExplicitTop = 558
     object lbTotal: TLabel
       AlignWithMargins = True
-      Left = 918
-      Top = 1
-      Width = 36
-      Height = 19
+      Left = 831
+      Top = 3
+      Width = 123
+      Height = 20
       Margins.Left = 0
       Margins.Top = 0
       Margins.Right = 10
       Margins.Bottom = 0
       Align = alRight
-      Caption = '000000'
+      Caption = 'Exibindo de 0 at'#233' 0 de 0'
       Layout = tlCenter
+      ExplicitLeft = 837
       ExplicitHeight = 15
     end
-    object Label2: TLabel
+    object lbPagina: TLabel
       AlignWithMargins = True
-      Left = 800
-      Top = 1
-      Width = 118
-      Height = 19
-      Margins.Left = 0
+      Left = 72
+      Top = 3
+      Width = 130
+      Height = 20
+      Margins.Left = 5
       Margins.Top = 0
-      Margins.Right = 0
+      Margins.Right = 5
       Margins.Bottom = 0
-      Align = alRight
-      Caption = 'Registros localizados:  '
+      Align = alLeft
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'P'#225'gina 0 de 0'
       Layout = tlCenter
-      ExplicitHeight = 15
+    end
+    object btnPrimeiro: TButton
+      Left = 3
+      Top = 3
+      Width = 32
+      Height = 20
+      Align = alLeft
+      Caption = '<|'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Courier New'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 0
+      OnClick = btnPrimeiroClick
+      ExplicitLeft = -3
+      ExplicitTop = 4
+    end
+    object btnAnterior: TButton
+      Left = 35
+      Top = 3
+      Width = 32
+      Height = 20
+      Align = alLeft
+      Caption = '<'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Courier New'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 1
+      OnClick = btnAnteriorClick
+      ExplicitLeft = 139
+      ExplicitTop = 4
+    end
+    object btnProximo: TButton
+      Left = 207
+      Top = 3
+      Width = 32
+      Height = 20
+      Align = alLeft
+      Caption = '>'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Courier New'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 2
+      OnClick = btnProximoClick
+      ExplicitLeft = 61
+      ExplicitTop = 4
+    end
+    object btnUltimo: TButton
+      Left = 239
+      Top = 3
+      Width = 32
+      Height = 20
+      Align = alLeft
+      Caption = '>|'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Courier New'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 3
+      OnClick = btnUltimoClick
+      ExplicitLeft = 245
+      ExplicitTop = 4
     end
   end
   object pnGrid: TPanel
     Left = 0
     Top = 73
     Width = 965
-    Height = 492
+    Height = 487
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 3
+    ExplicitHeight = 492
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0
       Width = 965
-      Height = 492
+      Height = 487
       Align = alClient
       DataSource = DataSource1
       Font.Charset = DEFAULT_CHARSET
@@ -488,6 +567,7 @@ object ProdutosBuscarView: TProdutosBuscarView
       TitleFont.Height = -11
       TitleFont.Name = 'Tahoma'
       TitleFont.Style = [fsBold]
+      OnDrawColumnCell = DBGrid1DrawColumnCell
       OnDblClick = DBGrid1DblClick
       OnKeyDown = DBGrid1KeyDown
       Columns = <

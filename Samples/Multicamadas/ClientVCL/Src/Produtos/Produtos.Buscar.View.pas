@@ -10,6 +10,7 @@ uses
   System.Classes,
   System.UITypes,
   System.Generics.Collections,
+  System.Math,
   Vcl.Graphics,
   Vcl.Controls,
   Vcl.Forms,
@@ -42,7 +43,6 @@ type
     pnGrid: TPanel;
     DBGrid1: TDBGrid;
     DataSource1: TDataSource;
-    Label2: TLabel;
     Dataset1: TAureliusDataset;
     btnAtualizar: TBitBtn;
     btnExcluir: TBitBtn;
@@ -51,6 +51,11 @@ type
     Dataset1Estoque: TFloatField;
     Dataset1Preco: TFloatField;
     Dataset1Registro: TIntegerField;
+    btnPrimeiro: TButton;
+    btnAnterior: TButton;
+    btnProximo: TButton;
+    btnUltimo: TButton;
+    lbPagina: TLabel;
     procedure edtBuscarChange(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure btnFecharClick(Sender: TObject);
@@ -63,12 +68,22 @@ type
     procedure DBGrid1DblClick(Sender: TObject);
     procedure btnExcluirClick(Sender: TObject);
     procedure Dataset1ObjectRemove(Dataset: TDataSet; AObject: TObject);
+    procedure btnPrimeiroClick(Sender: TObject);
+    procedure btnAnteriorClick(Sender: TObject);
+    procedure btnProximoClick(Sender: TObject);
+    procedure btnUltimoClick(Sender: TObject);
+    procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer; Column: TColumn;
+      State: TGridDrawState);
   private
     FXDataClient: TXDataClient;
     FResultList: TResultList;
-    FRecordsTotal: Integer;
+    FPageIndex: Integer;
+    FPageSize: Integer;
+    FPageTotal: Integer;
     procedure ListarDados;
     procedure ChamarTelaCadastrar(const AId: Integer = 0);
+    procedure ProcessaPaginacao;
+    procedure ZerarPaginacao;
   public
 
   end;
@@ -84,7 +99,8 @@ procedure TProdutosBuscarView.FormCreate(Sender: TObject);
 begin
   FXDataClient := TXDataClient.Create;
   FXDataClient.Uri := 'http://localhost:8000/tms/xdata/';
-  FRecordsTotal := 0;
+  FPageSize := 20;
+  Self.ZerarPaginacao;
 end;
 
 procedure TProdutosBuscarView.FormDestroy(Sender: TObject);
@@ -116,6 +132,7 @@ end;
 
 procedure TProdutosBuscarView.edtBuscarChange(Sender: TObject);
 begin
+  Self.ZerarPaginacao;
   Self.ListarDados;
 end;
 
@@ -129,44 +146,26 @@ begin
   Self.ListarDados;
 end;
 
-procedure TProdutosBuscarView.ListarDados;
-var
-  LProdutosService: IProdutosService;
-  LFiltros: TProdutoFiltros;
-begin
-  Screen.Cursor := crHourGlass;
-  try
-    Dataset1.Close;
-    LProdutosService := FXDataClient.Service<IProdutosService>;
-
-    LFiltros := TProdutoFiltros.Create;
-    try
-      case rdGroupFiltros.ItemIndex of
-        0: LFiltros.Id := StrToIntDef(edtBuscar.Text, 0);
-        1: LFiltros.Nome := edtBuscar.Text;
-        2: LFiltros.Registro := StrToIntDef(edtBuscar.Text, 0);
-      end;
-
-      FResultList := LProdutosService.List(LFiltros);
-    finally
-      LFiltros.Free;
-    end;
-
-    FRecordsTotal := FResultList.RecordsTotal;
-
-    Dataset1.SetSourceList(FResultList.ListProdutos);
-    Dataset1.Open;
-    Dataset1.Last;
-
-    lbTotal.Caption := FormatFloat('000000', DataSource1.DataSet.RecordCount);
-  finally
-    Screen.Cursor := crDefault;
-  end;
-end;
-
 procedure TProdutosBuscarView.DBGrid1DblClick(Sender: TObject);
 begin
   btnAlterar.Click;
+end;
+
+procedure TProdutosBuscarView.DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer; Column: TColumn; State: TGridDrawState);
+begin
+  DBGrid1.Canvas.Brush.Color := $00E6ECEC;
+  //EMULA dgRowSelect
+  if Rect.Top = TStringGrid(DBGrid1).CellRect(0, TStringGrid(DBGrid1).Row).Top then
+  begin
+    DBGrid1.Canvas.FillRect(Rect);
+    DBGrid1.Canvas.Brush.Color := clSkyBlue;
+    DBGrid1.Canvas.Font.Color := clWindowText;
+    DBGrid1.DefaultDrawDataCell(Rect, Column.Field, State);
+  end
+  else if(Odd(DBGrid1.DataSource.DataSet.RecNo))then
+    DBGrid1.Canvas.Brush.Color := clwhite;
+
+  DBGrid1.DefaultDrawColumnCell(Rect, DataCol, Column, State);
 end;
 
 procedure TProdutosBuscarView.DBGrid1KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
@@ -223,6 +222,103 @@ begin
   finally
     LView.Free;
   end;
+end;
+
+procedure TProdutosBuscarView.btnPrimeiroClick(Sender: TObject);
+begin
+  FPageIndex := 1;
+  ListarDados;
+end;
+
+procedure TProdutosBuscarView.btnAnteriorClick(Sender: TObject);
+begin
+  if FPageIndex > 1 then
+  begin
+    Dec(FPageIndex);
+    ListarDados;
+  end;
+end;
+
+procedure TProdutosBuscarView.btnProximoClick(Sender: TObject);
+begin
+  if FPageIndex < FPageTotal then
+  begin
+    Inc(FPageIndex);
+    ListarDados;
+  end;
+end;
+
+procedure TProdutosBuscarView.btnUltimoClick(Sender: TObject);
+begin
+  FPageIndex := FPageTotal;
+  ListarDados;
+end;
+
+procedure TProdutosBuscarView.ListarDados;
+var
+  LProdutosService: IProdutosService;
+  LFiltros: TProdutoFiltros;
+begin
+  Screen.Cursor := crHourGlass;
+  try
+    Dataset1.Close;
+    LProdutosService := FXDataClient.Service<IProdutosService>;
+
+    LFiltros := TProdutoFiltros.Create;
+    try
+      case rdGroupFiltros.ItemIndex of
+        0: LFiltros.Id := StrToIntDef(edtBuscar.Text, 0);
+        1: LFiltros.Nome := edtBuscar.Text;
+        2: LFiltros.Registro := StrToIntDef(edtBuscar.Text, 0);
+      end;
+
+      //PAGINACAO
+      LFiltros.Offset := (FPageIndex - 1) * FPageSize;
+      LFiltros.Limit  := FPageSize;
+
+      FResultList := LProdutosService.List(LFiltros);
+    finally
+      LFiltros.Free;
+    end;
+
+    Dataset1.SetSourceList(FResultList.ListProdutos);
+    Dataset1.Open;
+    Dataset1.Last;
+
+    Self.ProcessaPaginacao;
+  finally
+    Screen.Cursor := crDefault;
+  end;
+end;
+
+procedure TProdutosBuscarView.ZerarPaginacao;
+begin
+  FPageIndex := 1;
+end;
+
+procedure TProdutosBuscarView.ProcessaPaginacao;
+var
+  LRecordsTotal: Integer;
+  LFromRecord: Integer;
+  LToRecord: Integer;
+begin
+  LRecordsTotal := FResultList.RecordsTotal;
+
+  FPageTotal := 1;
+  if FPageSize > 0 then
+    FPageTotal := Ceil(LRecordsTotal / FPageSize);
+
+  //INTERVALO EXIBIDO
+  LFromRecord := 0;
+  LToRecord := 0;
+  if LRecordsTotal > 0 then
+  begin
+    LFromRecord := ((FPageIndex - 1) * FPageSize) + 1;
+    LToRecord := LFromRecord + Dataset1.RecordCount - 1;
+  end;
+
+  lbPagina.Caption := Format('Página %d de %d', [FPageIndex, FPageTotal]);
+  lbTotal.Caption := Format('Exibindo de %d até %d de %d', [LFromRecord, LToRecord, LRecordsTotal]);
 end;
 
 end.

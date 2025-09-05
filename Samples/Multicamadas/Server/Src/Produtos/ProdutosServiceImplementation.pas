@@ -91,12 +91,12 @@ begin
 
   FDm.QListar.Open;
 
-  if FDm.QListar.IsEmpty then
-    Exit(nil);
-
   FreeAndNil(FResultList);
   FResultList := TResultList.Create;
   FResultList.RecordsTotal := FDm.QListar.RecordCount;
+
+  if FDm.QListar.IsEmpty then
+    Exit(FResultList);
 
   if (Filtros.Offset > 0) or (Filtros.Limit > 0) then
   begin
