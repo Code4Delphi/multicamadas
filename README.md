@@ -11,7 +11,7 @@ Aplicação de exemplo de como transformar uma aplicação de arquitetura monol�
 **Aplicação multicamadas:**
 
 Back-end:
-| [ServerAuth](https://github.com/Code4Delphi/multicamadas/tree/master/Samples/Multicamadas/ServerAuth) | [Server](https://github.com/Code4Delphi/multicamadas/tree/master/Samples/Multicamadas/Server) | 
+| [ServerAuth](Samples/Multicamadas/ServerAuth) | [Server](Samples/Multicamadas/Server) | 
 |---|---|
 
 Front-end:
