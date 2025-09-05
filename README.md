@@ -2,7 +2,7 @@
 Aplicação de exemplo de como transformar uma aplicação de arquitetura monolítica em uma arquitetura em camadas
 
 
-## Componentes utilizados
+## 🔷 Componentes utilizados
 | Nome              | Local utilizado | Download | Demonstração | Descrição |
 |-------------------|-----------------| ---------|--------------|-----------|
 | **XData**         | Criação e consumo da API Rest | [Download](https://www.tmssoftware.com/site/xdata.asp) | [Demonstração](https://www.youtube.com/watch?v=cwb6_SKbB6A&list=PLLHSz4dOnnN2Xlf7OX47cF20gbmz9-9z0) | TMS XData é um Framework Delphi para desenvolvimento de servidores de API REST/JSON |
