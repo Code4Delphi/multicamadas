@@ -55,7 +55,7 @@ type
     btnAnterior: TButton;
     btnProximo: TButton;
     btnUltimo: TButton;
-    lbPagina: TLabel;
+    lbPaginacao: TLabel;
     procedure edtBuscarChange(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure btnFecharClick(Sender: TObject);
@@ -83,7 +83,6 @@ type
     procedure ListarDados;
     procedure ChamarTelaCadastrar(const AId: Integer = 0);
     procedure ProcessaPaginacao;
-    procedure ZerarPaginacao;
   public
 
   end;
@@ -100,12 +99,11 @@ begin
   FXDataClient := TXDataClient.Create;
   FXDataClient.Uri := 'http://localhost:8000/tms/xdata/';
   FPageSize := 20;
-  Self.ZerarPaginacao;
+  FPageIndex := 1;
 end;
 
 procedure TProdutosBuscarView.FormDestroy(Sender: TObject);
 begin
-  Dataset1.Close;
   FXDataClient.Free;
 end;
 
@@ -132,7 +130,7 @@ end;
 
 procedure TProdutosBuscarView.edtBuscarChange(Sender: TObject);
 begin
-  Self.ZerarPaginacao;
+  FPageIndex := 1;
   Self.ListarDados;
 end;
 
@@ -227,7 +225,7 @@ end;
 procedure TProdutosBuscarView.btnPrimeiroClick(Sender: TObject);
 begin
   FPageIndex := 1;
-  ListarDados;
+  Self.ListarDados;
 end;
 
 procedure TProdutosBuscarView.btnAnteriorClick(Sender: TObject);
@@ -235,7 +233,7 @@ begin
   if FPageIndex > 1 then
   begin
     Dec(FPageIndex);
-    ListarDados;
+    Self.ListarDados;
   end;
 end;
 
@@ -244,14 +242,14 @@ begin
   if FPageIndex < FPageTotal then
   begin
     Inc(FPageIndex);
-    ListarDados;
+    Self.ListarDados;
   end;
 end;
 
 procedure TProdutosBuscarView.btnUltimoClick(Sender: TObject);
 begin
   FPageIndex := FPageTotal;
-  ListarDados;
+  Self.ListarDados;
 end;
 
 procedure TProdutosBuscarView.ListarDados;
@@ -272,7 +270,6 @@ begin
         2: LFiltros.Registro := StrToIntDef(edtBuscar.Text, 0);
       end;
 
-      //PAGINACAO
       LFiltros.Offset := (FPageIndex - 1) * FPageSize;
       LFiltros.Limit  := FPageSize;
 
@@ -289,11 +286,6 @@ begin
   finally
     Screen.Cursor := crDefault;
   end;
-end;
-
-procedure TProdutosBuscarView.ZerarPaginacao;
-begin
-  FPageIndex := 1;
 end;
 
 procedure TProdutosBuscarView.ProcessaPaginacao;

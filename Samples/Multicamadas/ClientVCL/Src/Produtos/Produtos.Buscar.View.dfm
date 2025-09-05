@@ -432,7 +432,6 @@ object ProdutosBuscarView: TProdutosBuscarView
     Padding.Top = 2
     Padding.Bottom = 2
     TabOrder = 2
-    ExplicitTop = 558
     object lbTotal: TLabel
       AlignWithMargins = True
       Left = 831
@@ -446,10 +445,9 @@ object ProdutosBuscarView: TProdutosBuscarView
       Align = alRight
       Caption = 'Exibindo de 0 at'#233' 0 de 0'
       Layout = tlCenter
-      ExplicitLeft = 837
       ExplicitHeight = 15
     end
-    object lbPagina: TLabel
+    object lbPaginacao: TLabel
       AlignWithMargins = True
       Left = 72
       Top = 3
@@ -480,8 +478,6 @@ object ProdutosBuscarView: TProdutosBuscarView
       ParentFont = False
       TabOrder = 0
       OnClick = btnPrimeiroClick
-      ExplicitLeft = -3
-      ExplicitTop = 4
     end
     object btnAnterior: TButton
       Left = 35
@@ -498,8 +494,6 @@ object ProdutosBuscarView: TProdutosBuscarView
       ParentFont = False
       TabOrder = 1
       OnClick = btnAnteriorClick
-      ExplicitLeft = 139
-      ExplicitTop = 4
     end
     object btnProximo: TButton
       Left = 207
@@ -516,8 +510,6 @@ object ProdutosBuscarView: TProdutosBuscarView
       ParentFont = False
       TabOrder = 2
       OnClick = btnProximoClick
-      ExplicitLeft = 61
-      ExplicitTop = 4
     end
     object btnUltimo: TButton
       Left = 239
@@ -534,8 +526,6 @@ object ProdutosBuscarView: TProdutosBuscarView
       ParentFont = False
       TabOrder = 3
       OnClick = btnUltimoClick
-      ExplicitLeft = 245
-      ExplicitTop = 4
     end
   end
   object pnGrid: TPanel
@@ -546,7 +536,6 @@ object ProdutosBuscarView: TProdutosBuscarView
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 3
-    ExplicitHeight = 492
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0
