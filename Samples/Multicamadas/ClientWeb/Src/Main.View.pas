@@ -48,7 +48,7 @@ type
     WebPanel1: TWebPanel;
     lbCodigo: TWebLabel;
     edtCodigo: TWebEdit;
-    btnGetNome: TWebButton;
+    btnGetEstoque: TWebButton;
     btnGet: TWebButton;
     XDataWebConnection1: TXDataWebConnection;
     XDataWebClient1: TXDataWebClient;
@@ -70,7 +70,7 @@ type
     procedure lbWarningClick(Sender: TObject);
     procedure lbInformationalClick(Sender: TObject);
     [Async]
-    procedure btnGetNomeClick(Sender: TObject);
+    procedure btnGetEstoqueClick(Sender: TObject);
     procedure WebFormCreate(Sender: TObject);
     [Async]
     procedure btnGetClick(Sender: TObject);
@@ -153,7 +153,7 @@ begin
   Args.Request.Headers.SetValue('Authorization', 'Bearer ' + Configs_Token);
 end;
 
-procedure TMainView.btnGetNomeClick(Sender: TObject);
+procedure TMainView.btnGetEstoqueClick(Sender: TObject);
 var
   LResponse: TXDataClientResponse;
 begin
@@ -168,9 +168,10 @@ begin
     XDataWebConnection1.Open;
 
   LResponse := TAwait.Exec<TXDataClientResponse>(
-    XDataWebClient1.RawInvokeAsync('IProdutosService.GetNome', [StrToIntDef(edtCodigo.Text, 0)]));
+    XDataWebClient1.RawInvokeAsync('IProdutosService.GetEstoque', [StrToIntDef(edtCodigo.Text, 0)]));
 
-  ShowMessage(LResponse.ResponseText);
+  //ShowMessage(LResponse.ResponseText);
+  ShowMessage('O estoque do produto é: ' + string(TJSObject(LResponse.Result)['value']));
 end;
 
 procedure TMainView.btnGetClick(Sender: TObject);

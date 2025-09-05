@@ -13,6 +13,7 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
+  Application.Title := 'Monolito- Code4Delphi';
   Application.CreateForm(TConexaoDM, ConexaoDM);
   Application.CreateForm(TMainView, MainView);
   Application.Run;

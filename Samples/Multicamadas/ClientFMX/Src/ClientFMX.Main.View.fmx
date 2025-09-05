@@ -1,7 +1,7 @@
 object ClientFMXMainView: TClientFMXMainView
   Left = 0
   Top = 0
-  Caption = 'Client FMX - Multicamadas Code4Delphi'
+  Caption = 'Client FMX - Multicamadas C4D'
   ClientHeight = 500
   ClientWidth = 350
   FormFactor.Width = 320

@@ -1,7 +1,7 @@
 object MainView: TMainView
   Width = 1525
   Height = 743
-  Caption = 'Delphi Web - Home'
+  Caption = 'Client WEB - Multicamadas C4D'
   OnCreate = WebFormCreate
   object WebLabel1: TWebLabel
     Left = 1055
@@ -98,18 +98,19 @@ object MainView: TMainView
       Text = '10'
       WidthPercent = 100.000000000000000000
     end
-    object btnGetNome: TWebButton
+    object btnGetEstoque: TWebButton
       Left = 163
       Top = 0
       Width = 96
       Height = 33
       Align = alLeft
-      Caption = 'GetNome'
+      Caption = 'GetEstoque'
       ChildOrder = 2
       ElementID = 'btnGetNome'
       HeightPercent = 100.000000000000000000
       WidthPercent = 100.000000000000000000
-      OnClick = btnGetNomeClick
+      OnClick = btnGetEstoqueClick
+      ExplicitLeft = 157
     end
     object btnGet: TWebButton
       Left = 259
@@ -149,7 +150,6 @@ object MainView: TMainView
       HeightPercent = 100.000000000000000000
       WidthPercent = 100.000000000000000000
       OnClick = btnPostClick
-      ExplicitLeft = 445
     end
     object btnAlterar: TWebButton
       Left = 587
@@ -684,7 +684,6 @@ object MainView: TMainView
   end
   object XDataWebConnection1: TXDataWebConnection
     URL = 'http://localhost:8000/tms/xdata'
-    Connected = True
     OnError = XDataWebConnection1Error
     OnRequest = XDataWebConnection1Request
     Left = 96
