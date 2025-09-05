@@ -14,6 +14,7 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
+  Application.Title := 'Server - Multicamadas Code4Delphi';
   Application.CreateForm(TServerXDataDM, ServerXDataDM);
   Application.CreateForm(TServerMainView, ServerMainView);
   Application.Run;

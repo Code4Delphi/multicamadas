@@ -1,7 +1,7 @@
 object MainView: TMainView
   Left = 0
   Top = 0
-  Caption = 'Monolito - Produtos'
+  Caption = 'Monolito- Code4Delphi'
   ClientHeight = 512
   ClientWidth = 710
   Color = clBtnFace

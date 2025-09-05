@@ -1,7 +1,7 @@
 object ClientVCLMainView: TClientVCLMainView
   Left = 0
   Top = 0
-  Caption = 'Client VCL - Multicamadas Code4Delphi'
+  Caption = 'Client VCL - Multicamadas C4D'
   ClientHeight = 620
   ClientWidth = 860
   Color = clBtnFace
