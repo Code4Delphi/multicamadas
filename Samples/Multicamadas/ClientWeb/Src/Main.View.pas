@@ -207,7 +207,7 @@ begin
     XDataWebClient1.RawInvokeAsync('IProdutosService.List', []));
 
   XDataWebDataSet1.Close;
-  XDataWebDataSet1.SetJsonData(TJSObject(LResponse.Result)['value']);
+  XDataWebDataSet1.SetJsonData(TJSObject(LResponse.Result)['ListProdutos']);
   XDataWebDataSet1.Open;
 end;
 
