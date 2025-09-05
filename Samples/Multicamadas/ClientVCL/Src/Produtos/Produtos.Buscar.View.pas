@@ -300,7 +300,6 @@ begin
   if FPageSize > 0 then
     FPageTotal := Ceil(LRecordsTotal / FPageSize);
 
-  //INTERVALO EXIBIDO
   LFromRecord := 0;
   LToRecord := 0;
   if LRecordsTotal > 0 then
@@ -309,7 +308,7 @@ begin
     LToRecord := LFromRecord + Dataset1.RecordCount - 1;
   end;
 
-  lbPagina.Caption := Format('Página %d de %d', [FPageIndex, FPageTotal]);
+  lbPaginacao.Caption := Format('Página %d de %d', [FPageIndex, FPageTotal]);
   lbTotal.Caption := Format('Exibindo de %d até %d de %d', [LFromRecord, LToRecord, LRecordsTotal]);
 end;
 
