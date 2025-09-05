@@ -7,8 +7,6 @@ Aplicação de exemplo de como transformar uma aplicação de arquitetura monol�
 | [Aplicação monolítica](Samples/Monolito) |
 |---|
 
-<br/>
-
 🔸 **Aplicação multicamadas:**
 
 Back-end:
