@@ -34,10 +34,13 @@ Front-end:
 | [ClientWeb](Samples/Multicamadas/ClientWeb) | Aplicação web criada com TMS Web Core que consome os dados da API REST |
 
 
-## 🔷 Postman
-O Postman (disponível em postman.com) é uma ótima ferramenta que pode ser utilizada para realizar testes de acesso às APIs. <br/>
-Criamos uma collection para facilitar os testes e o entendimento do consumo das APIs REST desta aplicação de exemplo. 
-Segue o link para importação no Postman: [Multicamadas-Cod4Delphi.postman_collection.json](Extras/Multicamadas-Cod4Delphi.postman_collection.json)
+## 🔷 Programas auxiliares
+| Nome              | Link                                                              | Descrição                                                                                       |
+|-------------------| ------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
+| **Postman**       | [Postman.com](https://www.postman.com/)                           | É uma ótima ferramenta que pode ser utilizada para realizar testes de acesso às APIs. Criamos uma collection para facilitar os testes e o entendimento do consumo das APIs REST desta aplicação de exemplo. Segue o link para importação no Postman: [Multicamadas-Cod4Delphi.postman_collection.json](Extras/Multicamadas-Cod4Delphi.postman_collection.json)|
+| **Ngrok** | [Download](https://ngrok.com/downloads/) | O Ngrok é uma ferramenta que cria túneis seguros, permitindo expor servidores locais à internet. ([vídeo de desmonstração de uso do Ngrok](https://youtu.be/9KxcsnSL_5U?si=8PGvonKkc-IzmGsl&t=516)) |
+
+
 
 
 ## 📞 Contatos
