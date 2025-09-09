@@ -197,7 +197,6 @@ begin
   LResponse := TAwait.Exec<TXDataClientResponse>(
     XDataWebClient1.RawInvokeAsync('IProdutosService.GetEstoque', [StrToIntDef(edtCodigo.Text, 0)]));
 
-  //ShowMessage(LResponse.ResponseText);
   ShowMessage('O estoque do produto é: ' + string(TJSObject(LResponse.Result)['value']));
 end;
 
@@ -257,25 +256,12 @@ begin
 end;
 
 procedure TMainView.ProcessaPaginacao;
-//var
-//  LRecordsTotal: Integer;
-//  LFromRecord: Integer;
-//  LToRecord: Integer;
 begin
   FPageTotal := 1;
   if FPageSize > 0 then
     FPageTotal := Ceil(FRecordsTotal / FPageSize);
 
-//  LFromRecord := 0;
-//  LToRecord := 0;
-//  if FRecordsTotal > 0 then
-//  begin
-//    LFromRecord := ((FPageIndex - 1) * FPageSize) + 1;
-//    LToRecord := LFromRecord + XDataWebDataSet1.RecordCount - 1;
-//  end;
-
   lbPaginacao.Caption := Format('Página %d de %d', [FPageIndex, FPageTotal]);
-  //lbTotal.Caption := Format('Exibindo de %d até %d de %d', [LFromRecord, LToRecord, FRecordsTotal]);
 end;
 
 procedure TMainView.btnDeleteClick(Sender: TObject);
@@ -362,6 +348,9 @@ begin
 
   LResponse := TAwait.Exec<TXDataClientResponse>(
     XDataWebClient1.RawInvokeAsync('IProdutosService.Update', [XDataWebDataSet1Id.AsInteger, LProduto]));
+
+  ShowMessage('StatusCode: ' + LResponse.StatusCode.ToString + sLineBreak +
+   'ResponseText: ' + LResponse.ResponseText);
 end;
 
 function TMainView.GetProdutoPreenchido(const AView: TProdutosCadastrarView): TJSObject;

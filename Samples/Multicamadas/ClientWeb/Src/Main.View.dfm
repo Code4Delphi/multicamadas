@@ -96,7 +96,6 @@ object MainView: TMainView
       ElementID = 'lbPaginacao'
       HeightPercent = 100.000000000000000000
       WidthPercent = 100.000000000000000000
-      ExplicitLeft = 917
       ExplicitHeight = 15
     end
     object edtCodigo: TWebEdit
@@ -108,8 +107,9 @@ object MainView: TMainView
       ChildOrder = 1
       ElementID = 'edtId'
       HeightPercent = 100.000000000000000000
-      Text = '10'
+      Text = '15'
       WidthPercent = 100.000000000000000000
+      ExplicitLeft = 36
     end
     object btnGetEstoque: TWebButton
       Left = 163
@@ -201,7 +201,6 @@ object MainView: TMainView
       HeightPercent = 100.000000000000000000
       WidthPercent = 100.000000000000000000
       OnClick = btnProximoClick
-      ExplicitLeft = 970
     end
     object btnUltimo: TWebButton
       Left = 1066
@@ -215,7 +214,6 @@ object MainView: TMainView
       HeightPercent = 100.000000000000000000
       WidthPercent = 100.000000000000000000
       OnClick = btnUltimoClick
-      ExplicitLeft = 1003
     end
     object btnAnterior: TWebButton
       Left = 930
@@ -229,7 +227,6 @@ object MainView: TMainView
       HeightPercent = 100.000000000000000000
       WidthPercent = 100.000000000000000000
       OnClick = btnAnteriorClick
-      ExplicitLeft = 994
     end
     object btnPrimeiro: TWebButton
       Left = 897
@@ -243,7 +240,6 @@ object MainView: TMainView
       HeightPercent = 100.000000000000000000
       WidthPercent = 100.000000000000000000
       OnClick = btnPrimeiroClick
-      ExplicitLeft = 891
     end
   end
   object TMSFNCDataGrid1: TTMSFNCDataGrid

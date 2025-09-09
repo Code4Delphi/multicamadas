@@ -81,3 +81,5 @@ __recovery/
 # Boss dependency manager vendor folder https://github.com/HashLoad/boss
 modules/
 /Samples/Multicamadas/ClientFMX/Bin
+/Samples/Multicamadas/ClientWeb/TMSWeb
+/Samples/Multicamadas/ClientWeb/Bin
