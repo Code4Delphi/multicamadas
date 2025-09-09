@@ -51,6 +51,8 @@ type
     procedure btnExcluirClick(Sender: TObject);
     procedure btnAtualizarClick(Sender: TObject);
     procedure DBGrid1DblClick(Sender: TObject);
+    procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer; Column: TColumn;
+      State: TGridDrawState);
   private
     procedure ListarDados;
     procedure ChamarTelaCadastrar(const AId: Integer = 0);
@@ -132,6 +134,24 @@ end;
 procedure TProdutosBuscarView.DBGrid1DblClick(Sender: TObject);
 begin
   btnAlterar.Click;
+end;
+
+procedure TProdutosBuscarView.DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer;
+  Column: TColumn; State: TGridDrawState);
+begin
+  DBGrid1.Canvas.Brush.Color := $00E6ECEC;
+
+  if Rect.Top = TStringGrid(DBGrid1).CellRect(0, TStringGrid(DBGrid1).Row).Top then
+  begin
+    DBGrid1.Canvas.FillRect(Rect);
+    DBGrid1.Canvas.Brush.Color := clSkyBlue;
+    DBGrid1.Canvas.Font.Color := clWindowText;
+    DBGrid1.DefaultDrawDataCell(Rect, Column.Field, State);
+  end
+  else if(Odd(DBGrid1.DataSource.DataSet.RecNo))then
+    DBGrid1.Canvas.Brush.Color := clwhite;
+
+  DBGrid1.DefaultDrawColumnCell(Rect, DataCol, Column, State);
 end;
 
 procedure TProdutosBuscarView.DBGrid1KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);

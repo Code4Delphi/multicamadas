@@ -462,6 +462,7 @@ object ProdutosBuscarView: TProdutosBuscarView
       AutoSize = False
       Caption = 'P'#225'gina 0 de 0'
       Layout = tlCenter
+      ExplicitLeft = 69
     end
     object btnPrimeiro: TButton
       Left = 3

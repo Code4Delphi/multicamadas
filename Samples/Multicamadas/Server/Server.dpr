@@ -4,10 +4,10 @@ uses
   Vcl.Forms,
   Server.Main.View in 'Src\Server.Main.View.pas' {ServerMainView},
   Server.XData.DM in 'Src\Server.XData.DM.pas' {ServerXDataDM: TDataModule},
-  ProdutosService in '..\..\Common\ProdutosService.pas',
+  ProdutosService in '..\Common\ProdutosService.pas',
   ProdutosServiceImplementation in 'Src\Produtos\ProdutosServiceImplementation.pas',
   Produtos.DM in 'Src\Produtos\Produtos.DM.pas' {ProdutosDM: TDataModule},
-  Produtos.DTO in '..\..\Common\Produtos.DTO.pas';
+  Produtos.DTO in '..\Common\Produtos.DTO.pas';
 
 {$R *.res}
 

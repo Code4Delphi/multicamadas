@@ -69,7 +69,7 @@ object MainView: TMainView
   object WebPanel1: TWebPanel
     Left = 270
     Top = 304
-    Width = 1007
+    Width = 1099
     Height = 33
     ElementID = 'divContainerBotoes01'
     ChildOrder = 5
@@ -86,6 +86,18 @@ object MainView: TMainView
       WidthPercent = 100.000000000000000000
       ExplicitHeight = 15
     end
+    object lbPaginacao: TWebLabel
+      Left = 963
+      Top = 0
+      Width = 70
+      Height = 33
+      Align = alRight
+      Caption = 'P'#225'gina 0 de 0'
+      ElementID = 'lbPaginacao'
+      HeightPercent = 100.000000000000000000
+      WidthPercent = 100.000000000000000000
+      ExplicitHeight = 15
+    end
     object edtCodigo: TWebEdit
       Left = 42
       Top = 0
@@ -95,8 +107,9 @@ object MainView: TMainView
       ChildOrder = 1
       ElementID = 'edtId'
       HeightPercent = 100.000000000000000000
-      Text = '10'
+      Text = '15'
       WidthPercent = 100.000000000000000000
+      ExplicitLeft = 36
     end
     object btnGetEstoque: TWebButton
       Left = 163
@@ -110,12 +123,11 @@ object MainView: TMainView
       HeightPercent = 100.000000000000000000
       WidthPercent = 100.000000000000000000
       OnClick = btnGetEstoqueClick
-      ExplicitLeft = 157
     end
     object btnGet: TWebButton
       Left = 259
       Top = 0
-      Width = 96
+      Width = 77
       Height = 33
       Align = alLeft
       Caption = 'Get'
@@ -126,9 +138,9 @@ object MainView: TMainView
       OnClick = btnGetClick
     end
     object btnListar: TWebButton
-      Left = 355
+      Left = 336
       Top = 0
-      Width = 96
+      Width = 77
       Height = 33
       Align = alLeft
       Caption = 'Listar'
@@ -139,9 +151,9 @@ object MainView: TMainView
       OnClick = btnListarClick
     end
     object btnPost: TWebButton
-      Left = 451
+      Left = 413
       Top = 0
-      Width = 136
+      Width = 117
       Height = 33
       Align = alLeft
       Caption = 'Cadastrar / Post '
@@ -152,9 +164,9 @@ object MainView: TMainView
       OnClick = btnPostClick
     end
     object btnAlterar: TWebButton
-      Left = 587
+      Left = 530
       Top = 0
-      Width = 136
+      Width = 117
       Height = 33
       Align = alLeft
       Caption = 'Alterar / PUT'
@@ -165,9 +177,9 @@ object MainView: TMainView
       OnClick = btnAlterarClick
     end
     object btnDelete: TWebButton
-      Left = 723
+      Left = 647
       Top = 0
-      Width = 136
+      Width = 117
       Height = 33
       Align = alLeft
       Caption = 'Delete'
@@ -176,6 +188,58 @@ object MainView: TMainView
       HeightPercent = 100.000000000000000000
       WidthPercent = 100.000000000000000000
       OnClick = btnDeleteClick
+    end
+    object btnProximo: TWebButton
+      Left = 1033
+      Top = 0
+      Width = 33
+      Height = 33
+      Align = alRight
+      Caption = '>'
+      ChildOrder = 8
+      ElementID = 'btnProximo'
+      HeightPercent = 100.000000000000000000
+      WidthPercent = 100.000000000000000000
+      OnClick = btnProximoClick
+    end
+    object btnUltimo: TWebButton
+      Left = 1066
+      Top = 0
+      Width = 33
+      Height = 33
+      Align = alRight
+      Caption = '>|'
+      ChildOrder = 8
+      ElementID = 'btnUltimo'
+      HeightPercent = 100.000000000000000000
+      WidthPercent = 100.000000000000000000
+      OnClick = btnUltimoClick
+    end
+    object btnAnterior: TWebButton
+      Left = 930
+      Top = 0
+      Width = 33
+      Height = 33
+      Align = alRight
+      Caption = '<'
+      ChildOrder = 8
+      ElementID = 'btnAnterior'
+      HeightPercent = 100.000000000000000000
+      WidthPercent = 100.000000000000000000
+      OnClick = btnAnteriorClick
+    end
+    object btnPrimeiro: TWebButton
+      Left = 897
+      Top = 0
+      Width = 33
+      Height = 33
+      Align = alRight
+      Caption = '|<'
+      ChildOrder = 8
+      ElementID = 'btnPrimeiro'
+      HeightPercent = 100.000000000000000000
+      WidthPercent = 100.000000000000000000
+      OnClick = btnPrimeiroClick
     end
   end
   object TMSFNCDataGrid1: TTMSFNCDataGrid

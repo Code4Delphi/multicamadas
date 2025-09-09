@@ -4,6 +4,7 @@ object ProdutosBuscarView: TProdutosBuscarView
   Caption = 'Consulta de produtos'
   ClientHeight = 500
   ClientWidth = 350
+  Position = ScreenCenter
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]

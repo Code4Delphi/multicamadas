@@ -152,7 +152,7 @@ end;
 procedure TProdutosBuscarView.DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer; Column: TColumn; State: TGridDrawState);
 begin
   DBGrid1.Canvas.Brush.Color := $00E6ECEC;
-  //EMULA dgRowSelect
+
   if Rect.Top = TStringGrid(DBGrid1).CellRect(0, TStringGrid(DBGrid1).Row).Top then
   begin
     DBGrid1.Canvas.FillRect(Rect);

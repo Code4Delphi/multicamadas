@@ -138,14 +138,14 @@
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\..\Common\ProdutosService.pas"/>
+        <DCCReference Include="..\Common\ProdutosService.pas"/>
         <DCCReference Include="Src\Produtos\ProdutosServiceImplementation.pas"/>
         <DCCReference Include="Src\Produtos\Produtos.DM.pas">
             <Form>ProdutosDM</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\..\Common\Produtos.DTO.pas"/>
+        <DCCReference Include="..\Common\Produtos.DTO.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

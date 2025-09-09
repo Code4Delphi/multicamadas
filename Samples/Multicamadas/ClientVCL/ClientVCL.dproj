@@ -132,8 +132,8 @@
             <Form>ClientVCLMainView</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="..\..\Common\Produtos.DTO.pas"/>
-        <DCCReference Include="..\..\Common\ProdutosService.pas"/>
+        <DCCReference Include="..\Common\Produtos.DTO.pas"/>
+        <DCCReference Include="..\Common\ProdutosService.pas"/>
         <DCCReference Include="Src\Produtos\Produtos.Buscar.View.pas">
             <Form>ProdutosBuscarView</Form>
             <FormType>dfm</FormType>
