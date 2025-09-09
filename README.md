@@ -1,5 +1,5 @@
-# Multicamadas
-Aplicação de exemplo de como transformar uma aplicação de arquitetura monolítica em uma arquitetura em camadas
+# Do Monolito à Multicamadas
+Exemplos que demonstram a transformação de uma arquitetura monolítica em uma arquitetura em camadas. Esses exemplos fazem parte da minha palestra apresentada na Embarcadero Conference 2025, com o tema "Uma Base de Código, Três Frentes: Delphi Desktop, Mobile e Web. Do Monolito à Arquitetura em Camadas".
 
 
 ## 🔷 Componentes utilizados
@@ -34,7 +34,7 @@ Front-end:
 | [ClientWeb](Samples/Multicamadas/ClientWeb) | Aplicação web criada com TMS Web Core que consome os dados da API REST |
 
 
-## 🔷 Programas auxiliares
+## 🛠️ Ferramentas auxiliares
 | Nome              | Link                                                              | Descrição                                                                                       |
 |-------------------| ------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
 | **Postman**       | [Postman.com](https://www.postman.com/)                           | É uma ótima ferramenta que pode ser utilizada para realizar testes de acesso às APIs. Criamos uma collection para facilitar os testes e o entendimento do consumo das APIs REST desta aplicação de exemplo. Segue o link para importação no Postman: [Multicamadas-Cod4Delphi.postman_collection.json](Extras/Multicamadas-Cod4Delphi.postman_collection.json)|
