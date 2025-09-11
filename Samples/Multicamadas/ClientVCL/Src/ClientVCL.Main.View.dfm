@@ -2,8 +2,8 @@ object ClientVCLMainView: TClientVCLMainView
   Left = 0
   Top = 0
   Caption = 'Client VCL - Multicamadas C4D'
-  ClientHeight = 620
-  ClientWidth = 860
+  ClientHeight = 621
+  ClientWidth = 864
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,7 +11,7 @@ object ClientVCLMainView: TClientVCLMainView
   Font.Name = 'Segoe UI'
   Font.Style = []
   Menu = MainMenu1
-  WindowState = wsMaximized
+  Position = poScreenCenter
   OnKeyDown = FormKeyDown
   TextHeight = 15
   object MainMenu1: TMainMenu

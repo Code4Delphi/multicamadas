@@ -56,6 +56,7 @@ type
     btnProximo: TButton;
     btnUltimo: TButton;
     lbPaginacao: TLabel;
+    btnGetProduto10: TBitBtn;
     procedure edtBuscarChange(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure btnFecharClick(Sender: TObject);
@@ -74,6 +75,7 @@ type
     procedure btnUltimoClick(Sender: TObject);
     procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer; Column: TColumn;
       State: TGridDrawState);
+    procedure btnGetProduto10Click(Sender: TObject);
   private
     FXDataClient: TXDataClient;
     FResultList: TResultList;
@@ -126,22 +128,6 @@ begin
     if rdGroupFiltros.Items.Count >= Key - VK_F1 then
       rdGroupFiltros.ItemIndex := Key - VK_F1;
   end;
-end;
-
-procedure TProdutosBuscarView.edtBuscarChange(Sender: TObject);
-begin
-  FPageIndex := 1;
-  Self.ListarDados;
-end;
-
-procedure TProdutosBuscarView.btnFecharClick(Sender: TObject);
-begin
-  Self.Close;
-end;
-
-procedure TProdutosBuscarView.btnAtualizarClick(Sender: TObject);
-begin
-  Self.ListarDados;
 end;
 
 procedure TProdutosBuscarView.DBGrid1DblClick(Sender: TObject);
@@ -252,6 +238,22 @@ begin
   Self.ListarDados;
 end;
 
+procedure TProdutosBuscarView.edtBuscarChange(Sender: TObject);
+begin
+  FPageIndex := 1;
+  Self.ListarDados;
+end;
+
+procedure TProdutosBuscarView.btnFecharClick(Sender: TObject);
+begin
+  Self.Close;
+end;
+
+procedure TProdutosBuscarView.btnAtualizarClick(Sender: TObject);
+begin
+  Self.ListarDados;
+end;
+
 procedure TProdutosBuscarView.ListarDados;
 var
   LProdutosService: IProdutosService;
@@ -310,6 +312,19 @@ begin
 
   lbPaginacao.Caption := Format('Página %d de %d', [FPageIndex, FPageTotal]);
   lbTotal.Caption := Format('Exibindo de %d até %d de %d', [LFromRecord, LToRecord, LRecordsTotal]);
+end;
+
+procedure TProdutosBuscarView.btnGetProduto10Click(Sender: TObject);
+var
+  LProdutosService: IProdutosService;
+  LEstoque: Double;
+begin
+  LProdutosService := FXDataClient.Service<IProdutosService>;
+  LEstoque := LProdutosService.GetEstoque(15);
+  ShowMessage(LEstoque.ToString);
+
+  //COM APENAS UMA LINHA
+  ShowMessage(FXDataClient.Service<IProdutosService>.GetEstoque(15).ToString);
 end;
 
 end.

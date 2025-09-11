@@ -38,8 +38,8 @@ object ProdutosBuscarView: TProdutosBuscarView
     end
     object edtBuscar: TEdit
       Left = 24
-      Top = 32
-      Width = 903
+      Top = 36
+      Width = 793
       Height = 23
       Anchors = [akLeft, akTop, akRight]
       TabOrder = 0
@@ -57,7 +57,7 @@ object ProdutosBuscarView: TProdutosBuscarView
       AlignWithMargins = True
       Left = 1
       Top = 1
-      Width = 344
+      Width = 304
       Height = 48
       Margins.Left = 0
       Margins.Top = 0
@@ -75,9 +75,9 @@ object ProdutosBuscarView: TProdutosBuscarView
     end
     object btnCadastrar: TBitBtn
       AlignWithMargins = True
-      Left = 441
+      Left = 471
       Top = 8
-      Width = 100
+      Width = 94
       Height = 34
       Margins.Left = 0
       Margins.Top = 7
@@ -144,12 +144,13 @@ object ProdutosBuscarView: TProdutosBuscarView
         00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
       TabOrder = 1
       OnClick = btnCadastrarClick
+      ExplicitLeft = 476
     end
     object btnFechar: TBitBtn
       AlignWithMargins = True
-      Left = 863
+      Left = 869
       Top = 8
-      Width = 100
+      Width = 94
       Height = 34
       Margins.Left = 0
       Margins.Top = 7
@@ -212,12 +213,13 @@ object ProdutosBuscarView: TProdutosBuscarView
         0000000000000000000000000000000000000000000000000000}
       TabOrder = 2
       OnClick = btnFecharClick
+      ExplicitLeft = 870
     end
     object btnAlterar: TBitBtn
       AlignWithMargins = True
-      Left = 542
+      Left = 566
       Top = 8
-      Width = 100
+      Width = 94
       Height = 34
       Margins.Left = 0
       Margins.Top = 7
@@ -280,12 +282,13 @@ object ProdutosBuscarView: TProdutosBuscarView
         FA040404040404040404040404040404040404040404F8FC0404}
       TabOrder = 3
       OnClick = btnAlterarClick
+      ExplicitLeft = 569
     end
     object btnAtualizar: TBitBtn
       AlignWithMargins = True
-      Left = 744
+      Left = 756
       Top = 8
-      Width = 118
+      Width = 112
       Height = 34
       Margins.Left = 0
       Margins.Top = 7
@@ -352,12 +355,13 @@ object ProdutosBuscarView: TProdutosBuscarView
         8176B88285FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
       TabOrder = 4
       OnClick = btnAtualizarClick
+      ExplicitLeft = 757
     end
     object btnExcluir: TBitBtn
       AlignWithMargins = True
-      Left = 643
+      Left = 661
       Top = 8
-      Width = 100
+      Width = 94
       Height = 34
       Margins.Left = 0
       Margins.Top = 7
@@ -420,6 +424,22 @@ object ProdutosBuscarView: TProdutosBuscarView
         0000000000000000000000000000000000000000000000000000}
       TabOrder = 5
       OnClick = btnExcluirClick
+      ExplicitLeft = 662
+    end
+    object btnGetProduto10: TBitBtn
+      AlignWithMargins = True
+      Left = 360
+      Top = 8
+      Width = 110
+      Height = 34
+      Margins.Left = 0
+      Margins.Top = 7
+      Margins.Right = 1
+      Margins.Bottom = 7
+      Align = alRight
+      Caption = 'Get Produto 10'
+      TabOrder = 6
+      OnClick = btnGetProduto10Click
     end
   end
   object pnTotal: TPanel

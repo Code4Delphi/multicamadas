@@ -40,7 +40,7 @@ object ProdutosCadastrarView: TProdutosCadastrarView
     WidthPercent = 100.000000000000000000
   end
   object lbEstoque: TWebLabel
-    Left = 256
+    Left = 257
     Top = 200
     Width = 42
     Height = 15
@@ -73,7 +73,7 @@ object ProdutosCadastrarView: TProdutosCadastrarView
     Width = 43
     Height = 15
     Caption = 'Registro'
-    ElementID = 'lbPorcentagem'
+    ElementID = 'lbRegistro'
     ElementFont = efCSS
     ElementPosition = epIgnore
     HeightStyle = ssAuto
