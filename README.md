@@ -44,6 +44,8 @@ Front-end:
 | **Ngrok** | [Download](https://ngrok.com/downloads/) | O Ngrok é uma ferramenta que cria túneis seguros, permitindo expor servidores locais à internet. ([vídeo de desmonstração de uso do Ngrok](https://youtu.be/9KxcsnSL_5U?si=8PGvonKkc-IzmGsl&t=516)) |
 
 
+## 📰 Postagem sobre a Econ2025
+Quer saber como foi a Embarcadero Conference 2025 e ainda conferir algumas fotos bem legais do evento? Acesse: https://code4delphi.com.br/blog/embarcadero-conference-2025/
 
 
 ## 📞 Contatos
