@@ -5,6 +5,9 @@ Exemplos que demonstram a transformação de uma arquitetura monolítica em uma 
 ## 📚 Slides da epresentação
 [Slides apresentação Econ2025](Extras/Econ2025-Cesar-Cardoso.pdf)
 
+## ▶️ Resumo da apresentação
+[Resumo da apresentação na Embarcadero Conference 2025](https://www.youtube.com/watch?v=q1OlEAOAFxQ)
+
 ## 🔷 Componentes utilizados
 | Nome              | Local utilizado               | Download                                                          | Demonstração                                                                                        | Descrição                                                                                       |
 |-------------------|-------------------------------| ------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
